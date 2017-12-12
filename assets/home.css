@@ -1,0 +1,15 @@
+h1 {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;  
+}
+
+h1 span {
+  font-weight: 700;  
+} 
+
+.content {
+  padding-left: 6em;
+  padding-right: 6em;
+  font-family: 'Gudea', sans-serif;
+} 
