@@ -41,7 +41,7 @@ function build_site {
 }
 
 function test_html {
-  rake test
+  bundle exec rake test
 }
 
 function deploy {
