@@ -56,3 +56,30 @@ gem install jekyll
 ```
 Si te utilizas Windows, por favor, sigue las siguientes instrucciones:
 https://jekyllrb.com/docs/windows/#installation
+
+
+¿Cómo levantar la aplicación?
+-------------
+Primero, clona el repositorio a tu computador:
+```
+git clone <PATH_TO_REPO>
+```
+
+Luego, entra a la carpeta generada del repositorio
+```
+cd REPOSITORY_FOLDER
+```
+
+Dentro de la carpeta, ejecuta el siguiente comando:
+```
+bundle install
+```
+
+Por último, sólo ejecuta:
+```
+jekyll serve
+```
+
+Ahora accede a la dirección de **localhost** para ver la página :)
+
+Enjoy!
