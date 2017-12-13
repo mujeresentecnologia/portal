@@ -1,7 +1,15 @@
 language: ruby
+
 rvm:
 - 2.4
+
 script: ./_scripts/build_and_deploy.sh
+
 env:
   global:
     secure: BKnTOKAdMuwf5I/dDrgSJvVN1h5rFXCWXP4374j57j6jAjzBWyuu6GneJqKDt2MDVSHVvGOvt2YfvXPccrRDHnFf9ZJkLS7G5SWwjv95nPrxSMkTAVxD5vfIE7zog2CdfqpdtN7gQxdUv/tkbSezK4ICEYbBmkh5EjRkUn7T2O7gSaWM13mqB/gLzpZH/MJCPESSAiFKWXluj01F8arAjYwkgQQIfc+yFmbIRYHZoFtVMFnYUwlIkTxKpGZDugb3JLtXqPWsWfEem55XKgokQJAppFOhMhnyCGK+O6m957hRAdlBGvOJ3RrR7gCJ1WAnK73MekEQCpkelEB9eWje8LYULdb+r2JLbyEOo7F/hknQhxgT9Z4QevleoOfUgOtXykDLDg2fZoTcw+mGUpRzujzkvR7MjHLNxCgpwaPFR1yd3X5vIrcZh/lBhz9oPkmq7YUW3Hj0qIxU+mmEfm/5BUbCNm9xbPXKD6S40cB/bkYXTU01sTZ4qR6wunj7KKnodBSu5++gVZy2hldLprlSSgr8PdNY6qxJRXlQ1WGifhUW/InKWL6ABYDf7Sj20NTez7r/o4lFMr4c6nNxdVJ6tkEFhqin5QesD9RXyu95sAZ+wRX5Gy/5uuILo9zPcfjPQA1H3rqA6gjpr4nJdp3t8r0bMbqM1UOUsMbVwQlytxQ=
+
+addons:
+  apt:
+    packages:
+    - libcurl4-openssl-dev
