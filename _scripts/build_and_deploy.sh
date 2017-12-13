@@ -7,6 +7,7 @@ function main {
   clean
   get_current_site
 	build_site
+  test_html
   deploy
 }
 
@@ -37,6 +38,10 @@ function get_current_site {
 function build_site { 
 	echo "building site"
 	bundle exec jekyll build --config $CONFIG_FILES
+}
+
+function test_html {
+  rake test
 }
 
 function deploy {
