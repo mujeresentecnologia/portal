@@ -12,4 +12,22 @@ h1 span {
   padding-left: 6em;
   padding-right: 6em;
   font-family: 'Gudea', sans-serif;
-} 
+}
+
+.content p {
+	text-align: justify;
+}
+
+.logos {
+	text-align: center;
+}
+
+.logos div {
+	display: inline;
+	padding: 2em;
+	vertical-align: top;
+}
+
+.logos img {
+	width: 15em;
+}
