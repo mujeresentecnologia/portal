@@ -19,15 +19,15 @@ h1 span {
 }
 
 .logos {
+	margin-top: 1.5em;
 	text-align: center;
 }
 
 .logos div {
 	display: inline;
-	padding: 2em;
-	vertical-align: top;
+	padding: 1em;
 }
 
 .logos img {
-	width: 15em;
+	height: 2em;
 }
