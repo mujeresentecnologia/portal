@@ -31,3 +31,12 @@ h1 span {
 .logos img {
 	height: 2em;
 }
+
+footer {
+  padding: 0.5em;
+  font-family: 'Gudea', sans-serif;
+  text-align: center;
+  background-color: gray;
+  color: black;
+  margin-top: 1em;
+} 
