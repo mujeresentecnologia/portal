@@ -12,13 +12,9 @@
         </div>
         {{ content }}
         <div class="logos">
-            <div><img src="assets/images/logo_DUOC.png" alt="DUOC"></div>
-            <div><img src="assets/images/logo_git.png" alt="Girls in Tech"></div>
-            <div><img src="assets/images/logo_inacap.png" alt="Inacap"></div>
-            <div><img src="assets/images/logo_laboratoria.png" alt="Laboratoria"></div>
-            <div><img src="assets/images/logo_udechile.png" alt="UdeChile"></div>
-            <div><img src="assets/images/logo_women-in-management.png" alt="Women in Management"></div>
-            <div><img src="assets/images/logo_kodea.png" alt="Kodea"></div>
+            {% for org in site.data.organizaciones %}
+              <div><img src="assets/images/{{ org.logo }}" alt={{ org.nombre }}></div>
+            {% endfor %}
         </div>
       </div>
       <div id="footer">
