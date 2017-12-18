@@ -20,6 +20,13 @@ task :build_staging => [:clean] do
   jekyll 'build -q --config _config.yml,_config-staging.yml'
 end
 
+desc 'ejecuta el sitio localmente con jekyll serve'
+task :preview => [:clean] do
+  jekyll 'serve --watch'
+end
+
+# Pruebas
+
 desc 'ejecuta pruebas con html-proofer'
 task :test => [:build] do
   options = { :assume_extension => true, :check_html => true, :enforce_https => true }
