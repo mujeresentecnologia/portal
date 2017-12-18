@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mujeresentecnologia/portal.svg?branch=master)](https://travis-ci.org/mujeresentecnologia/portal)
+
 Mujeres en Tecnología
 ===================
 
