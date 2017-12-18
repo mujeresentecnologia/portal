@@ -15,6 +15,11 @@ task :build => [:clean] do
   jekyll 'build -q'
 end
 
+desc 'hace la compilacion y genera el sitio estatico con jekyll build con configuraciones de staging'
+task :build_staging => [:clean] do
+  jekyll 'build -q --config _config.yml,_config-staging.yml'
+end
+
 desc 'ejecuta pruebas con html-proofer'
 task :test => [:build] do
   options = { :assume_extension => true, :check_html => true, :enforce_https => true }
