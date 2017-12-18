@@ -6,21 +6,25 @@
     <link href="https://fonts.googleapis.com/css?family=Gudea" rel="stylesheet">
   </head>
   <body>
-    <div class="content">
-      <div>
-        <h1>&iquest;<span>QU&Eacute;</span> ES <span>MUJERES</span> EN <span>TECNOLOG&Iacute;A</span>?</h1>
+    <div class="container">
+      <div class="content">
+        <div>
+          <h1>&iquest;<span>QU&Eacute;</span> ES <span>MUJERES</span> EN <span>TECNOLOG&Iacute;A</span>?</h1>
+        </div>
+        {{ content }}
+        <div class="logos">
+            <div><img src="assets/images/logo_DUOC.png" alt="DUOC"></div>
+            <div><img src="assets/images/logo_git.png" alt="Girls in Tech"></div>
+            <div><img src="assets/images/logo_inacap.png" alt="Inacap"></div>
+            <div><img src="assets/images/logo_laboratoria.png" alt="Laboratoria"></div>
+            <div><img src="assets/images/logo_udechile.png" alt="UdeChile"></div>
+            <div><img src="assets/images/logo_women-in-management.png" alt="Women in Management"></div>
+            <div><img src="assets/images/logo_kodea.png" alt="Kodea"></div>
+        </div>
       </div>
-      {{ content }}
-      <div class="logos">
-          <div><img src="assets/images/logo_DUOC.png" alt="DUOC"></div>
-          <div><img src="assets/images/logo_git.png" alt="Girls in Tech"></div>
-          <div><img src="assets/images/logo_inacap.png" alt="Inacap"></div>
-          <div><img src="assets/images/logo_laboratoria.png" alt="Laboratoria"></div>
-          <div><img src="assets/images/logo_udechile.png" alt="UdeChile"></div>
-          <div><img src="assets/images/logo_women-in-management.png" alt="Women in Management"></div>
-          <div><img src="assets/images/logo_kodea.png" alt="Kodea"></div>
-      </div>  
+      <div id="footer">
+        {% include footer.html %}
+      </div>
     </div>
-    {% include footer.html %} 
   </body>
 </html>
