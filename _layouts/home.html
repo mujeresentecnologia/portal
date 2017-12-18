@@ -8,22 +8,18 @@
     <script src="assets/js/bootstrap.min.js"></script>
   </head>
   <body>
-  {% include navbar.html %}
-    <div class="homeContainer">
-      <div class="content">
-        <div>
-          <h1>&iquest;<span>QU&Eacute;</span> ES <span>MUJERES</span> EN <span>TECNOLOG&Iacute;A</span>?</h1>
-        </div>
-        {{ content }}
-        <div class="logos">
-            {% for org in site.data.organizaciones %}
-              <div><img src="assets/images/{{ org.logo }}" alt={{ org.nombre }}></div>
-            {% endfor %}
-        </div>
+    {% include navbar.html %}
+    <div class="content">
+      <div>
+        <h1>&iquest;<span>QU&Eacute;</span> ES <span>MUJERES</span> EN <span>TECNOLOG&Iacute;A</span>?</h1>
       </div>
-      <div id="footer">
-        {% include footer.html %}
+      {{ content }}
+      <div class="logos">
+          {% for org in site.data.organizaciones %}
+            <div><img src="assets/images/{{ org.logo }}" alt={{ org.nombre }}></div>
+          {% endfor %}
       </div>
     </div>
+    {% include footer.html %}
   </body>
 </html>
