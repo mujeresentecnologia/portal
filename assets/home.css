@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+html, body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+
 h1 {
   text-align: center;
   margin-bottom: 1em;
@@ -14,6 +20,11 @@ h1 {
 h1 span {
   font-weight: 700;  
 } 
+
+.container {
+   min-height:100%;
+   position:relative;
+}
 
 .content {
   font-family: 'Gudea', sans-serif;
@@ -44,4 +55,7 @@ footer {
   text-align: center;
   background-color: gray;
   color: black;
-} 
+  position:absolute;
+  bottom:0;
+  width:100%;
+}
