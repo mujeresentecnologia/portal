@@ -7,11 +7,6 @@ h1 {
 
 h1 span {
   font-weight: 700;  
-} 
-
-.homeContainer {
-   min-height:100%;
-   position:relative;
 }
 
 .content {
