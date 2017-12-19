@@ -23,6 +23,15 @@ footer {
   margin-top: 1em;
 }
 
-#navbarTitle {
+#navbarText {
   font-family: 'Oswald', sans-serif;
 }
+
+.met_content {
+  font-family: 'Gudea', sans-serif;
+}
+
+.met_content p {
+	text-align: center;
+}
+
