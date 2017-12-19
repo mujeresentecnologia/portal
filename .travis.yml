@@ -1,4 +1,5 @@
 language: ruby
+cache: bundler
 rvm:
 - 2.4
 script: ./_scripts/build_and_deploy.sh
