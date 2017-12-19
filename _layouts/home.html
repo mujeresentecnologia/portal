@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    {% include head.html %}
-    <link rel="stylesheet" href="assets/home.css">
-  </head>
-  <body>
-    <div class="met_main">
-      {% include navbar.html %}
-      <div class="met_content">
+
+<head>
+  {% include head.html %}
+  <link rel="stylesheet" href="assets/home.css">
+</head>
+
+<body>
+  {% include navbar.html %}
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-10 col-md-10 col-xs-offset-1 col-md-offset-1">
         <div>
-          <h1>&iquest;<span>QU&Eacute;</span> ES <span>MUJERES</span> EN <span>TECNOLOG&Iacute;A</span>?</h1>
+          <h1>&iquest;
+            <span>QU&Eacute;</span> ES
+            <span>MUJERES</span> EN
+            <span>TECNOLOG&Iacute;A</span>?</h1>
         </div>
-        {{ content }}
+        <div class="met_content">
+          {{ content }} 
+        </div>
         <div class="met_logos">
-            {% for org in site.data.organizaciones %}
-              <div><img src="assets/images/{{ org.logo }}" alt={{ org.nombre }}></div>
-            {% endfor %}
+          {% for org in site.data.organizaciones %}
+          <div>
+            <img src="assets/images/{{ org.logo }}" alt={{ org.nombre }}/>
+          </div>
+          {% endfor %}
         </div>
-      </div>
-      <div>
-        {% include footer.html %}
       </div>
     </div>
-  </body>
+  </div>
+  {% include footer.html %}
+</body>
+
 </html>

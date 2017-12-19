@@ -1,23 +1,28 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+html {
+  position: relative;
+  min-height: 100%;
 }
 
-html, body {
-   margin:0;
+body {
+   margin:0 0 4em 0;
    padding:0;
    height:100%;
    font-family: 'Gudea', sans-serif;
 }
 
-footer {
-  padding: 1em;
+footer { 
   font-family: 'Gudea', sans-serif;
   text-align: center;
   background-color: gray;
   color: black;
+  height: 3em; 
+  padding: 1em;
   position:absolute;
   bottom:0;
   width:100%;
+  margin-top: 1em;
+}
+
+#navbarTitle {
+  font-family: 'Oswald', sans-serif;
 }
