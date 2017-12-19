@@ -2,24 +2,27 @@
 <html>
   <head>
     {% include head.html %}
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/home.css">
     <script src="https://code.jquery.com/jquery-1.12.2.min.js" integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk=" crossorigin="anonymous"></script>
     <script src="assets/js/bootstrap.min.js"></script>
   </head>
   <body>
-    {% include navbar.html %}
-    <div class="content">
-      <div>
-        <h1>&iquest;<span>QU&Eacute;</span> ES <span>MUJERES</span> EN <span>TECNOLOG&Iacute;A</span>?</h1>
+    <div class="met_main">
+      {% include navbar.html %}
+      <div class="met_content">
+        <div>
+          <h1>&iquest;<span>QU&Eacute;</span> ES <span>MUJERES</span> EN <span>TECNOLOG&Iacute;A</span>?</h1>
+        </div>
+        {{ content }}
+        <div class="met_logos">
+            {% for org in site.data.organizaciones %}
+              <div><img src="assets/images/{{ org.logo }}" alt={{ org.nombre }}></div>
+            {% endfor %}
+        </div>
       </div>
-      {{ content }}
-      <div class="logos">
-          {% for org in site.data.organizaciones %}
-            <div><img src="assets/images/{{ org.logo }}" alt={{ org.nombre }}></div>
-          {% endfor %}
+      <div>
+        {% include footer.html %}
       </div>
     </div>
-    {% include footer.html %}
   </body>
 </html>
