@@ -9,18 +9,12 @@ h1 span {
   font-weight: 700;  
 }
 
-.met_main {
-  min-height: 100%;
-  position: relative;
-}
-
 .met_content {
   font-family: 'Gudea', sans-serif;
-  padding: 6em;
 }
 
 .met_content p {
-	text-align: justify;
+	text-align: center;
 }
 
 /*Style para los logos de las organizaciones*/
