@@ -47,7 +47,7 @@ function test_html {
 function deploy {
   echo "deploying changes"
 
-  if [ -z "$TRAVIS_PULL_REQUEST" ]; then
+  if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
      echo "except don't publish site for pull requests"
       exit 0
   fi
