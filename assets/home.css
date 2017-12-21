@@ -22,3 +22,10 @@ h1 span {
 .met_logos img {
 	height: 2em;
 }
+
+.met_banner {
+    background-image: url("images/banner_met.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
