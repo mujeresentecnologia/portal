@@ -24,7 +24,12 @@ h1 span {
 }
 
 .met_banner {
-    background-image: url("images/banner_met.png");
+    background:
+        linear-gradient(
+              rgba(82, 72, 156, 0.6),
+              rgba(82, 72, 156, 0.6)
+            ),
+         url("images/banner_met.png");
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
