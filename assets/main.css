@@ -5,7 +5,6 @@ html {
 
 body {
    margin:0 0 4em 0;
-   padding: 0;
    height:100%;
    font-family: 'Gudea', sans-serif;
 
@@ -29,6 +28,7 @@ footer {
 }
 
 .met_content {
+  padding: 4em 0 0 0;
   font-family: 'Gudea', sans-serif;
 }
 
