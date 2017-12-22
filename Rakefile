@@ -12,12 +12,12 @@ task :clean do
 end
 
 desc 'hace la compilacion y genera el sitio estatico con jekyll build'
-task :build => [:clean] do
+task :build do
   jekyll 'build -q --config _config.yml,_config-prod.yml'
 end
 
 desc 'hace la compilacion y genera el sitio estatico con jekyll build con configuraciones de staging'
-task :build_staging => [:clean] do
+task :build_staging do
   jekyll 'build -q --config _config.yml,_config-staging.yml'
 end
 
