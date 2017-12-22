@@ -12,7 +12,7 @@ function main {
 }
 
 function setup_env {
-  CONFIG_FILES="_config.yml"
+  CONFIG_FILES="_config.yml,_config-prod.yml"
   ENV_PATH="home"
   if [ "$TRAVIS_BRANCH" == "develop" ]; then
     CONFIG_FILES="_config.yml,_config-staging.yml"

@@ -98,3 +98,14 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+require 'nokogiri'
+require 'yaml'
+
+def load_config
+  YAML.load_file('_config-prod.yml')
+end
+
+def load_home
+  Nokogiri::HTML(File.open('_site/index.html'))
+end
