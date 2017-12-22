@@ -42,7 +42,15 @@ RSpec::Core::RakeTask.new(:spec) do |t|
 end
 
 desc 'ejecuta pruebas de html y las pruebas unitarias'
-task :test => [:build, :test_html, :spec]
+task :test do
+  if ENV['ENTORNO'] == "staging-env"; then
+	Rake::Task["build_staging"].invoke
+  else
+	Rake::Task["build"].invoke
+  end
+  Rake::Task["test_html"].invoke
+  Rake::Task["spec"].invoke
+end
 
 # Helper
 
