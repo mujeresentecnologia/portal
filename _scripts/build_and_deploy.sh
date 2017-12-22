@@ -4,7 +4,7 @@ set -e
 
 function main {
   setup_env
-  clean
+  # clean
   # fetch_current_site
   build_and_test
   deploy
@@ -51,6 +51,7 @@ function deploy {
   fi
 
 	cd _site
+  git remote remove origin
   git remote add origin $DEPLOY_REPO
   git fetch origin gh-pages
   git checkout gh-pages
