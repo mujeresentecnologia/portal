@@ -53,7 +53,6 @@ function deploy {
 	cd _site
   git remote remove origin
   git remote add origin $DEPLOY_REPO
-  git fetch origin gh-pages
   git checkout gh-pages
 
 	git config --global user.name "Travis CI"
@@ -61,6 +60,7 @@ function deploy {
 	git add -A
 	git status
 	git commit -m "Latest site built on Travis build: $TRAVIS_BUILD_NUMBER"
+  git pull -r
 	git push $DEPLOY_REPO gh-pages:gh-pages
 }
 
