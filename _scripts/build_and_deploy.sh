@@ -5,7 +5,7 @@ set -e
 function main {
   setup_env
   clean
-  fetch_current_site
+  # fetch_current_site
   build_and_test
   deploy
 }
@@ -51,6 +51,10 @@ function deploy {
   fi
 
 	cd _site
+  git remote add origin $DEPLOY_REPO
+  git fetch origin gh-pages
+  git checkout gh-pages
+
 	git config --global user.name "Travis CI"
   git config --global user.email "travis@travis-ci.org" 
 	git add -A
