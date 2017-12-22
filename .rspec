@@ -1,0 +1,2 @@
+--default-path _spec
+--require spec_helper
