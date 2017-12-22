@@ -102,8 +102,8 @@ end
 require 'nokogiri'
 require 'yaml'
 
-def load_config
-  YAML.load_file('_config-prod.yml')
+def load_config(env)
+  YAML.load_file("_config-#{env}.yml")
 end
 
 def load_home
