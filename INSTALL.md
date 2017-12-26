@@ -3,12 +3,11 @@ Mujeres en Tecnología
 
 A continuación encontrarás el paso a paso para configurar el entorno de desarrollo en tu computador.
 
-Herramientas
+Dependencias
 ------------
- - Ruby.
- - Bundle.
- - Gihub.
- - Git.
+ - Ruby 2.4.2
+ - Bundle
+ - Git
  
 
 Instalación
@@ -35,6 +34,8 @@ Entonces, verifica si cuentas con Ruby:
 ruby -v
 ```
 Si tu versión es menor a 2.4.X, entonces:
+
+(recomendamos la utlizacin de rvm para instalaciones de Ruby)
 ```
 \curl -sSL https://get.rvm.io | bash -s stable
 
