@@ -1,0 +1,51 @@
+h1 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+h1 span {
+  font-weight: 700;  
+}
+
+.met_logos {
+	margin-top: 1.5em;
+	text-align: center;
+}
+
+.met_logos div {
+	display: inline;
+	padding: 1em;
+}
+
+.met_logos img {
+	height: 2em;
+}
+
+.met_banner {
+    background:
+        linear-gradient(
+              rgba(82, 72, 156, 0.6),
+              rgba(82, 72, 156, 0.6)
+            ),
+         url("images/banner_met.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+
+}
+
+.met_banner div {
+    color: #FFFFFF;
+    float: right;
+    min-width: 250px;
+    padding-right: 2em;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+    width: 30%;
+    font-size: 2em;
+}

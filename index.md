@@ -1,6 +1,5 @@
 ---
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 ---
+
+Mujeres en tecnología es una mesa de trabajo abierta, diversa e inclusiva, para personas e instituciones que quieran apoyar la participación femenina en las ciencias y en la industria tecnológica, que busca consolidar, visibilizar, potenciar y ampliar iniciativas pro mujeres en tecnología.

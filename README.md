@@ -13,12 +13,12 @@ Siga las instrucciones que se encuentran en [INSTALL.md](https://github.com/muje
 -------------
 Primero, clona el repositorio a tu computador:
 ```
-git clone git@github.com:mujeresentecnologia/portal.git
+git clone <PATH_TO_REPO>
 ```
 
 Luego, entra a la carpeta generada del repositorio
 ```
-cd portal
+cd REPOSITORY_FOLDER
 ```
 
 Dentro de la carpeta, ejecuta el siguiente comando:
@@ -28,7 +28,7 @@ bundle install
 
 Por último, sólo ejecuta:
 ```
-rake preview
+jekyll serve
 ```
 
 Ahora accede a la dirección de **localhost** para ver la página :)

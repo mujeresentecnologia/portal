@@ -5,16 +5,14 @@ set -e
 function main {
   setup_env
   clean
-  get_current_site
-	build_site
+  fetch_current_site
+  build_and_test
   deploy
 }
 
 function setup_env {
-  CONFIG_FILES="_config.yml"
   ENV_PATH="home"
   if [ "$TRAVIS_BRANCH" == "develop" ]; then
-    CONFIG_FILES="_config.yml,_config-staging.yml"
     ENV_PATH="staging-env"
   fi
   DEPLOY_REPO="https://${GH_TOKEN}@github.com/mujeresentecnologia/${ENV_PATH}.git"
@@ -22,10 +20,10 @@ function setup_env {
 
 function clean { 
 	echo "cleaning _site folder"
-	if [ -d "_site" ]; then rm -Rf _site; fi 
+	bundle exec rake clean
 }
 
-function get_current_site { 
+function fetch_current_site {
 	echo "getting latest site"
 	git clone $DEPLOY_REPO _site 
   cd _site
@@ -34,27 +32,27 @@ function get_current_site {
   cd ..
 }
 
-function build_site { 
-	echo "building site"
-	bundle exec jekyll build --config $CONFIG_FILES
+function build_and_test {
+  echo "building and testing"
+  bundle exec rake test ENTORNO=$ENV_PATH
 }
 
 function deploy {
   echo "deploying changes"
 
   if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-     echo "except don't publish site for pull requests"
+     echo "Finished! (we dont deploy pull requests anywhere, if you need to deploy on staging or prod you should merge this code into develop or master, respectively)"
       exit 0
   fi
 
   if [ "$TRAVIS_BRANCH" != "master" ] && [ "$TRAVIS_BRANCH" != "develop" ]; then
-      echo "we should only publish the master or develop branch. Stopping here."
+      echo "Finished! (we only publish the master and develop branches, if you need to deploy on staging or prod you should merge this code into develop or master, respectively)"
       exit 0
   fi
 
 	cd _site
 	git config --global user.name "Travis CI"
-  git config --global user.email "travis@travis-ci.org" 
+  git config --global user.email "travis@travis-ci.org"
 	git add -A
 	git status
 	git commit -m "Latest site built on Travis build: $TRAVIS_BUILD_NUMBER"

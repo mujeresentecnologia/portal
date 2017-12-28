@@ -1,0 +1,38 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+   margin:0 0 4em 0;
+   height:100%;
+   font-family: 'Gudea', sans-serif;
+
+}
+
+footer { 
+  font-family: 'Gudea', sans-serif;
+  text-align: center;
+  background-color: gray;
+  color: black;
+  height: 3em; 
+  padding: 1em;
+  position:absolute;
+  bottom:0;
+  width:100%;
+  margin-top: 1em;
+}
+
+#navbarText {
+  font-family: 'Oswald', sans-serif;
+}
+
+.met_content {
+  padding: 4em 0 0 0;
+  font-family: 'Gudea', sans-serif;
+}
+
+.met_content p {
+	text-align: center;
+}
+
