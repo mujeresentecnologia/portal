@@ -1,0 +1,19 @@
+---
+---
+{% for banner in site.data.banners %}
+  {% assign page_name = banner[0] %}
+  {% assign banner_info = banner[1] %}
+.met_banner_{{ page_name }} {
+  background:
+    linear-gradient(
+      rgba(82, 72, 156, 0.6),
+      rgba(82, 72, 156, 0.6)
+    ),
+    url("images/{{ banner_info.img }}");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;  
+}
+
+{% endfor %}
