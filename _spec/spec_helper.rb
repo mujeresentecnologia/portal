@@ -111,6 +111,10 @@ def load_main_config()
   YAML.load_file("_config.yml")
 end
 
+def load_data(file)
+  YAML.load_file("_data/#{file}.yml")
+end
+
 def load_home
   Nokogiri::HTML(File.open('_site/index.html'), nil, Encoding::UTF_8.to_s)
 end
