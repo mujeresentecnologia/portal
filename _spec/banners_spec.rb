@@ -14,6 +14,9 @@ describe 'Contenidos de Banners' do
     it 'debería existir texto para banner home' do
       texto_banner = home.css('.met_banner_text').text
       expected_value = banners["home"][0]["text"]
+      if expected_value.nil?
+        expected_value = ""
+      end
       
       expect(texto_banner).to match(expected_value)
     end
@@ -30,7 +33,9 @@ describe 'Contenidos de Banners' do
     it 'debería existir texto para banner about' do
       texto_banner = about.css('.met_banner_text').text
       expected_value = banners["about"][0]["text"]
-      
+      if expected_value.nil?
+        expected_value = ""
+      end
       expect(texto_banner).to match(expected_value)
     end
   end
