@@ -7,7 +7,7 @@ describe 'Google Analytics' do
     if ENV['ENTORNO'] == "staging-env"; then
       let(:google_id) { load_config('staging').fetch('google_analytics') }
     else
-      let(:google_id) { load_config('prod').fetch('google_analytics') }
+      let(:google_id) { load_main_config().fetch('google_analytics') }
     end
 
     it 'define a tag <script> inside <head>' do
