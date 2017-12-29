@@ -38,10 +38,6 @@ footer p {
   color: var(--second-text-color);
 }
 
-#navbarText {
-  font-family: 'Oswald', sans-serif;
-}
-
 .met_content {
   padding: 4em 0 0 0;
   font-family: 'Gudea', sans-serif;
@@ -49,17 +45,4 @@ footer p {
 
 .met_content p {
 	text-align: center;
-}
-
-.met_banner_text {
-  color: #FFFFFF;
-  float: right;
-  min-width: 250px;
-  padding-right: 2em;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  text-align: right;
-  width: 30%;
-  font-size: 2em;
 }

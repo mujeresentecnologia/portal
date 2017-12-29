@@ -1,0 +1,19 @@
+#navbarText {
+  font-family: 'Oswald', sans-serif;
+}
+
+#navbarText a {
+  color: var(--links-color);  
+}
+
+.navbar-default {
+  background-color: var(--primary-color-background);
+}
+
+.navbar-right {
+  padding-right: 5em;
+}
+
+.navbar-right li {
+  background-color: var(--second-color-background);
+}
