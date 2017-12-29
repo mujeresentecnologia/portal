@@ -1,3 +1,15 @@
+:root {
+  --primary-color-background: #52489C; /*Fondo barra y footer*/
+  --second-color-background: #58C3C3; /*Fondo links menu*/
+  --page-color-background: #F5F4F4; /*Fondo paginas*/
+  --menu-color-background: #FFFFFF; /*Fondo lineas hamburguesa*/
+
+  --links-color: #FFFFFF; /*Links del menu*/
+  --title-color: #52489C; /*Titulo pagina*/
+  --text-color: #2F2F2F; /*Parrafo*/
+  --second-text-color: #EBEBEB; /*Letra footer*/
+}
+
 html {
   position: relative;
   min-height: 100%;
@@ -7,20 +19,23 @@ body {
    margin:0 0 4em 0;
    height:100%;
    font-family: 'Gudea', sans-serif;
-
 }
 
-footer { 
+footer {
   font-family: 'Gudea', sans-serif;
   text-align: center;
-  background-color: gray;
+  background-color: var(--primary-color-background);
   color: black;
-  height: 3em; 
+  height: 3em;
   padding: 1em;
   position:absolute;
   bottom:0;
   width:100%;
   margin-top: 1em;
+}
+
+footer p {
+  color: var(--second-text-color);
 }
 
 #navbarText {
