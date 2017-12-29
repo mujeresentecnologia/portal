@@ -118,3 +118,7 @@ end
 def load_home
   Nokogiri::HTML(File.open('_site/index.html'), nil, Encoding::UTF_8.to_s)
 end
+
+def load_page(page)
+  Nokogiri::HTML(File.open("_site/#{page}.html"), nil, Encoding::UTF_8.to_s)
+end
