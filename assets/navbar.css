@@ -10,10 +10,26 @@
   background-color: var(--primary-color-background);
 }
 
-.navbar-right {
-  padding-right: 5em;
+.navbar-nav {
+  margin: 0px -15px;
 }
 
 .navbar-right li {
   background-color: var(--second-color-background);
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: var(--menu-color-lines);
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: var(--third-color-background);
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-width: 0;
+}
+
+.navbar-default .navbar-toggle {
+	border-width: 0;
 }

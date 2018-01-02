@@ -1,9 +1,10 @@
 :root {
   --primary-color-background: #52489C; /*Fondo barra y footer*/
   --second-color-background: #58C3C3; /*Fondo links menu*/
+  --third-color-background: #F55A68; /*Fondo hamburguesa*/
   --page-color-background: #F5F4F4; /*Fondo paginas*/
-  --menu-color-background: #FFFFFF; /*Fondo lineas hamburguesa*/
 
+  --menu-color-lines: #FFFFFF; /*Lineas hamburguesa*/
   --links-color: #FFFFFF; /*Links del menu*/
   --title-color: #52489C; /*Titulo pagina*/
   --text-color: #2F2F2F; /*Parrafo*/
