@@ -29,3 +29,7 @@
 .met_navbar_color_blue {
   background-color: var(--second-color-background);
 }
+
+.met_navbar_color_pink {
+  background-color: var(--third-color-background);
+}

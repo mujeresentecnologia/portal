@@ -9,13 +9,11 @@ describe 'Menu' do
       it 'todos los links deben estar en el navbar' do
         expect(menu_links).to all(
           satisfy do |item|
+            element_list = home.css('.nav').xpath(%Q{//ul/li/a[@href="#{item['link']}"]})
 
-            element_list = home.css('.nav').xpath(%Q{//ul/li})
-            element_link = element_list.xpath(%Q{a[@href="#{item['link']}"]})
-
-            expect(element_list.attr('class').value).to eq("met_navbar_color_#{item['color']}")
-            expect(element_link.size).to eq(1)
-            expect(element_link.text).to eq(item['nombre'])
+            expect(element_list[0].parent.attr('class')).to eq("met_navbar_color_#{item['color']}")
+            expect(element_list.size).to eq(1)
+            expect(element_list.text).to eq(item['nombre'])
           end)
       end
     end
