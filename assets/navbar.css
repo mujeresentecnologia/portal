@@ -14,10 +14,6 @@
   margin: 0px -15px;
 }
 
-.navbar-right li {
-  background-color: var(--second-color-background);
-}
-
 .navbar-default .navbar-toggle .icon-bar {
 	background-color: var(--menu-color-lines);
 }
@@ -28,4 +24,8 @@
 
 .met_navbar_no_border {
 	border-width: 0;
+}
+
+.met_navbar_color_blue {
+  background-color: var(--second-color-background);
 }

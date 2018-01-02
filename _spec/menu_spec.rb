@@ -10,8 +10,10 @@ describe 'Menu' do
         expect(menu_links).to all(
           satisfy do |item|
 
-            element_link = home.css('.nav').xpath(%Q{//ul/li/a[@href="#{item['link']}"]})
+            element_list = home.css('.nav').xpath(%Q{//ul/li})
+            element_link = element_list.xpath(%Q{a[@href="#{item['link']}"]})
 
+            expect(element_list.attr('class').value).to eq("met_navbar_color_#{item['color']}")
             expect(element_link.size).to eq(1)
             expect(element_link.text).to eq(item['nombre'])
           end)
