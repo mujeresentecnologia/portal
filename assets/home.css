@@ -3,6 +3,7 @@ h1 {
   font-weight: 300;
   margin-bottom: 1em;
   text-align: center;
+  color: var(--title-color);
 }
 
 h1 span {

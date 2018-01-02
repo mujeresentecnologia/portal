@@ -17,9 +17,10 @@ html {
 }
 
 body {
-   margin:0 0 4em 0;
+   margin:0 0 8em 0;
    height:100%;
    font-family: 'Gudea', sans-serif;
+   background-color: var(--page-color-background);
 }
 
 footer {
@@ -32,7 +33,6 @@ footer {
   position:absolute;
   bottom:0;
   width:100%;
-  margin-top: 1em;
 }
 
 footer p {
@@ -46,4 +46,6 @@ footer p {
 
 .met_content p {
 	text-align: center;
+  color: var(--text-color);
+  font-size: 1.4em;
 }
