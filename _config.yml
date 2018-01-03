@@ -8,6 +8,8 @@ url: ""
 
 markdown: kramdown
 plugins:
+  - jekyll-last-modified-at
+  - jekyll-sitemap
   - jekyll-feed
 environment: dev
 exclude:

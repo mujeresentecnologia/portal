@@ -11,6 +11,8 @@ source "https://rubygems.org" do
 	end
 
 	group :jekyll_plugins do
-	  gem "jekyll-feed", "~> 0.6"
+	  gem 'jekyll-feed', '~> 0.6'
+	  gem 'jekyll-sitemap', '~> 1.1', '>= 1.1.1'
+	  gem 'jekyll-last-modified-at', '~> 1.0', '>= 1.0.1'
 	end
 end
