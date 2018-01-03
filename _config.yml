@@ -21,6 +21,10 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - Rakefile
+  - README.md
+  - INSTALL.md
+  - LICENSE
+  - NOTICE
 
 # Config overriten in staging
 baseurl: "/home"
