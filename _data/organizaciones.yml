@@ -1,22 +1,30 @@
 # Informaciones de las organizaciones
-
-- nombre: DUOC
-  logo: logo_DUOC.png
-
-- nombre: Girls in Tech
-  logo: logo_git.png
-
-- nombre: Inacap
-  logo: logo_inacap.png
+# el dato 'position' debe indicar la posicion que el logo debe estar en el grid para pantallas pequeñas
 
 - nombre: Laboratoria
   logo: logo_laboratoria.png
+  position: left
 
-- nombre: Universidad de Chile
-  logo: logo_udechile.png
+- nombre: Inacap
+  logo: logo_inacap.png
+  position: right
 
 - nombre: Women in Management
   logo: logo_women-in-management.png
+  position: left
+
+- nombre: Girls in Tech
+  logo: logo_git.png
+  position: right
+
+- nombre: Universidad de Chile
+  logo: logo_udechile.png
+  position: left
+
+- nombre: DUOC
+  logo: logo_DUOC.png
+  position: right
 
 - nombre: Kodea
   logo: logo_kodea.png
+  position: center
