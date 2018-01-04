@@ -6,6 +6,17 @@
   color: var(--links-color);  
 }
 
+#navbarWarning {
+  background-color: var(--warning-color-background);
+  text-align: center;
+}
+
+#navbarWarning p {
+  color: var(--links-color);
+  margin: 0;
+  padding: 0.5em 0;
+}
+
 .navbar-default {
   background-color: var(--primary-color-background);
 }

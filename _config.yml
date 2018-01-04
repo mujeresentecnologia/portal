@@ -11,7 +11,6 @@ plugins:
   - jekyll-last-modified-at
   - jekyll-sitemap
   - jekyll-feed
-environment: dev
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -29,3 +28,4 @@ exclude:
 # Config overriten in staging
 baseurl: "/home"
 google_analytics: UA-111563968-1
+environment: prod
