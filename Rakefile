@@ -21,6 +21,11 @@ task :build_staging do
   jekyll 'build -q --config _config.yml,_config-staging.yml'
 end
 
+desc 'ejecuta el sitio localmente con jekyll serve con las configuraciones de staging'
+task :preview_staging => [:clean] do
+  jekyll 'serve --config _config.yml,_config-staging.yml --watch'
+end
+
 desc 'ejecuta el sitio localmente con jekyll serve'
 task :preview => [:clean] do
   jekyll 'serve --watch'
