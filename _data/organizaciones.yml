@@ -1,5 +1,5 @@
 # Informaciones de las organizaciones
-# el dato 'position' debe indicar la posicion que el logo debe estar en el grid para pantallas pequeñas
+# el dato 'position' debe indicar la posicion que el logo debe estar en el grid 2x2 para pantallas pequeñas
 
 - nombre: Laboratoria
   logo: logo_laboratoria.png

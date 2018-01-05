@@ -55,7 +55,7 @@ function deploy {
   git config --global user.email "travis@travis-ci.org"
 	git add -A
 	git status
-	git commit -m "Latest site built on Travis build: $TRAVIS_BUILD_NUMBER"
+	git commit -m "Latest site built on Travis build # $TRAVIS_BUILD_NUMBER; Generated from commit https://github.com/mujeresentecnologia/portal/commit/$TRAVIS_COMMIT"
 	git push $DEPLOY_REPO gh-pages:gh-pages
 }
 
