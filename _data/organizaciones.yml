@@ -1,30 +1,62 @@
 # Informaciones de las organizaciones
 # el dato 'position' debe indicar la posicion que el logo debe estar en el grid 2x2 para pantallas pequeñas
 
-- nombre: Laboratoria
+- id: 1
+  name: Laboratoria
+  content: "Presente en Chile, Perú, México y Brasil, forma mujeres como desarrolladoras web y las inserta en el mercado
+  laboral luego de 6 meses de formación, brindando capacitación en cursos específicos 1 año y medio más, mientras trabajan. 
+  Más de 600 mujeres se han graduado desde 2015 y el 75% han sido contratadas en el sector TECH como desarrolladoras, 
+  triplicando sus ingresos. Laboratoria está convirtiendose rápidamente en la principal fuente de talento femenino digital de LATAM."
   logo: logo_laboratoria.png
   position: left
+  url: http://www.laboratoria.la
 
-- nombre: Inacap
+- id: 2
+  name: Inacap
+  content: ""
   logo: logo_inacap.png
   position: right
+  url: 
 
-- nombre: Women in Management
+- id: 3
+  name: Women in Management
+  content: "El objetivo de WIM es aumentar la productividad en las organizaciones, proporcionando una plataforma para que las 
+  mujeres desarrollen su potencial y alcancen posiciones de toma de decisiones, a través del fortalecimiento de redes de apoyo, 
+  fomento de habilidades de liderazgo y visibilidad de roles."
   logo: logo_women-in-management.png
   position: left
-
-- nombre: Girls in Tech
+  url: http://www.wimchile.cl
+  
+- id: 4
+  name: Girls in Tech
+  content: "Somos una ONG que existe con el fin de promover la participación femenina en la creación de ciencia y tecnología. 
+  Trabajamos con mujeres y niñas por medio de talleres y capacitaciones y estamos presentes en las regiones de Valparaíso, Metropolitana, 
+  Bio Bio y los Lagos."
   logo: logo_git.png
   position: right
+  url: http://www.girlsintechchile.com/
 
-- nombre: Universidad de Chile
+- id: 5
+  name: Universidad de Chile
+  content: ""
   logo: logo_udechile.png
   position: left
+  url: 
 
-- nombre: DUOC
+- id: 6
+  name: DUOC
+  content: "Ser los principales agentes de creación de capital humano en el área TI en Chile para la sociedad global, reconocidos
+  por ser la Escuela de Informática y Telecomunicaciones de “docencia” más destacada del país, por ser un ecosistema de innovación 
+  gravitante y por constituirnos como una plataforma de encuentro entre los principales actores del área TI de Chile."
   logo: logo_DUOC.png
   position: right
-
-- nombre: Kodea
+  url: https://www.facebook.com/EscuelaITDuocUC
+ 
+- id: 7
+  name: Kodea
+  content: "Kodea es una fundación creada por gente vinculada a la innovación, la tecnología, la educación y el trabajo con sentido. 
+  Es una iniciativa joven que cuenta con una mirada multidimensional e inclusiva y el compromiso de querer construir un ambicioso proyecto
+  cuyo alcance sea generar profundos cambios en la realidad del país en materia de capital humano TI e inclusión femenina y otras minorías."
   logo: logo_kodea.png
   position: center
+  url: http://www.kodea.org

@@ -35,7 +35,7 @@ end
 
 desc 'ejecuta pruebas con html-proofer'
 task :test_html do
-  options = { :assume_extension => true, :check_html => true, :enforce_https => true }
+  options = { :assume_extension => true, :check_html => true, :enforce_https => false }
   HTMLProofer.check_directory("./_site", options).run
 end
 

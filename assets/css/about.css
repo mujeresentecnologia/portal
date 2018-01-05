@@ -6,7 +6,7 @@ h1 {
 }
 
 .dark {
-  background-color: #52489C;
+  background-color: var(--primary-color-background);
   color: var(--second-text-color);
   font-family: 'Gudea', sans-serif;
   padding: 1em 0 3em 0;
@@ -16,3 +16,14 @@ h1 {
 .dark p {
   text-align: justify;
 }
+
+.logo {
+  vertical-align: middle;
+  height: 100%;
+}
+
+.logo img {
+  max-width: 100%;
+  max-height: 2em;
+}
+

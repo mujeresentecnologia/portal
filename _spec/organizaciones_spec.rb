@@ -23,7 +23,7 @@ describe 'Organizaciones' do
       it "los logos de todas las organizaciones deben estar en la pagina inicial" do
         organizaciones.each do |org|
           element_src = home.css('.met_logos').xpath(%Q{//img[@src="assets/images/#{org['logo']}"]})
-          element_alt = home.css('.met_logos').xpath(%Q{//img[@alt="#{org['nombre']}"]})
+          element_alt = home.css('.met_logos').xpath(%Q{//img[@alt="#{org['name']}"]})
 
           expect(element_src.size).to eq(1)
           expect(element_alt.size).to eq(1)
@@ -36,6 +36,63 @@ describe 'Organizaciones' do
           element_class = element_src[0].parent.attr('class')
 
           expect(element_class).to eq(grid_styles["#{org['position']}"][0]['style'])
+        end
+      end
+    end
+
+    context "Cuando estoy en la página quienes somos" do
+      let(:about) { load_page("about") }
+      let(:organizaciones) { load_data("organizaciones") }
+      it "Puedo ver el título de cada institucion" do
+        organizaciones.each do |org|
+          name = org["name"]
+          h4_search_pattern = "div#met_org_" + org['id'].to_s + " h4"
+          h4_element = about.css(h4_search_pattern)
+          element_text = h4_element[0].text
+          
+          expect(element_text).to match(name)
+        end
+      end 
+
+      it "Puedo ver la descripción de cada institucion" do
+        organizaciones.each do |org|
+          content = org["content"]
+          p_search_pattern = "div#met_org_" + org['id'].to_s + " p"
+          paragraph = about.css(p_search_pattern)
+          expected_text = paragraph[0].text
+          
+          expect(expected_text).to match(content)
+        end
+      end 
+
+      it "Deberia mostrar url de la institucion en caso de contener uno" do
+        organizaciones.each do |org|
+          content_url = org["url"]
+          a_search_pattern = "div#met_org_" + org['id'].to_s + " a"
+          url = about.css(a_search_pattern)
+          empty = 0;
+          index = 0;
+          if content_url == nil
+            expect(url.size).to equal(empty)
+          else
+            expected_url = url[index]["href"]
+            expect(expected_url).to match(content_url)
+          end
+        end
+      end
+
+      it "Deberia mostrar logo de la institución de cada organización" do
+        organizaciones.each do |org|
+          logo = org["logo"]
+          name = org["name"]
+          image_search_pattern = "div#met_org_" + org['id'].to_s + " img"
+          images = about.css(image_search_pattern)
+          image_src = images[0]["src"]
+          image_alt = images[0]["alt"]
+          expected_src_value = "assets/images/" + logo
+          
+          expect(image_src).to match(expected_src_value)
+          expect(image_alt).to match(name)
         end
       end
     end
