@@ -7,7 +7,8 @@
 
   --menu-color-lines: #FFFFFF; /*Lineas hamburguesa*/
   --links-color: #FFFFFF; /*Links del menu*/
-  --title-color: #52489C; /*Titulo pagina*/
+  --title-color-dark: #52489C; /*Titulo pagina oscuro*/
+  --title-color-light: #FFFFFF; /*Titulo pagina claro*/
   --text-color: #2F2F2F; /*Parrafo*/
   --second-text-color: #EBEBEB; /*Letra footer*/
   --warning-link-text: #FFB6C1; /**/
@@ -19,7 +20,7 @@ html {
 }
 
 body {
-   margin:0 0 8em 0;
+   margin:0 0 3em 0;
    height:100%;
    font-family: 'Gudea', sans-serif;
    background-color: var(--page-color-background);

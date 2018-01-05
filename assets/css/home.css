@@ -3,7 +3,7 @@ h1 {
   font-weight: 300;
   margin-bottom: 1em;
   text-align: center;
-  color: var(--title-color);
+  color: var(--title-color-dark);
 }
 
 h1 span {
@@ -12,7 +12,8 @@ h1 span {
 
 .met_logos {
 	margin-top: 2em;
-	text-align: center;
+  text-align: center;
+  padding-bottom: 5em;
 }
 
 .met_logos div {

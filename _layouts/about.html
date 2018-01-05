@@ -3,30 +3,31 @@
 
 <head>
   {% include head.html %}
+  <link rel="stylesheet" href="assets/css/about.css">
 </head>
 
 <body>
   {% include navbar.html %}
   {% include banner.html %}
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-10 col-md-10 col-xs-offset-1 col-md-offset-1">
-        <h1 id="description_title">
-          <span>
-          {{ site.data.static_content[page.layout]["description"]["title"] | strip }}
-          </span>
-        </h1>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-6">
-        <p id="left_paragraph">{{ site.data.static_content[page.layout]["description"]["left"] | newline_to_br }}</p>
-      </div>
-      <div class="col-xs-12 col-md-6">
-          <p id="right_paragraph">{{ site.data.static_content[page.layout]["description"]["right"] | newline_to_br }}</p>
+  <section class="dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-10 col-md-10 col-xs-offset-1 col-md-offset-1">
+          <h1 id="description_title">
+            {{ site.data.static_content[page.layout]["description"]["title"] | strip }}
+          </h1>
         </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <p id="left_paragraph">{{ site.data.static_content[page.layout]["description"]["left"] | newline_to_br }}</p>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <p id="right_paragraph">{{ site.data.static_content[page.layout]["description"]["right"] | newline_to_br }}</p>
+          </div>
+      </div>
     </div>
-  </div>
+  </section>
   {% include footer.html %}
 </body>
 
