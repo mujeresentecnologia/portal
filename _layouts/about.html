@@ -19,24 +19,31 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-12 col-md-6">
+        <div class="col-xs-10 col-md-5 col-xs-offset-1 col-md-offset-1">
           <p id="left_paragraph">{{ site.data.static_content[page.layout]["description"]["left"] | newline_to_br }}</p>
         </div>
-        <div class="col-xs-12 col-md-6">
+        <div class="col-xs-10 col-md-5 col-xs-offset-1 col-md-offset-0">
             <p id="right_paragraph">{{ site.data.static_content[page.layout]["description"]["right"] | newline_to_br }}</p>
           </div>
       </div>
     </div>
   </section>
-  <section>
+  <section class="light">
     <div class="container">
+      <div class="row">
+        <div class="col-xs-10 col-md-10 col-xs-offset-1 col-md-offset-1">
+          <h1>
+            INSTITUCIONES PARTICIPANTES
+          </h1>
+        </div>
+      </div>
       {% for org in site.data.organizaciones %}
-      <div id="met_org_{{ org["id"] }}" class="row">
+      <div id="met_org_{{ org["id"] }}" class="row flex">
         <div class="col-xs-3 col-md-3 col-xs-offset-1 col-md-offset-1 logo">
           <img  src="assets/images/{{ org['logo'] }}" alt="{{ org['name'] }}" />
         </div>
         <div class="col-xs-7 col-md-7">
-          <h4>{{ org["name"] }}</h4>
+          <h3>{{ org["name"] | upcase }}</h3>
           <p>
             {{ org["content"] }}
           </p>

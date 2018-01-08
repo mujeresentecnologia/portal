@@ -46,11 +46,11 @@ describe 'Organizaciones' do
       it "Puedo ver el título de cada institucion" do
         organizaciones.each do |org|
           name = org["name"]
-          h4_search_pattern = "div#met_org_" + org['id'].to_s + " h4"
-          h4_element = about.css(h4_search_pattern)
-          element_text = h4_element[0].text
+          h3_search_pattern = "div#met_org_" + org['id'].to_s + " h3"
+          h3_element = about.css(h3_search_pattern)
+          element_text = h3_element[0].text
           
-          expect(element_text).to match(name)
+          expect(element_text).to match(name.upcase)
         end
       end 
 

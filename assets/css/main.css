@@ -2,6 +2,7 @@
   --primary-color-background: #52489C; /*Fondo barra y footer*/
   --second-color-background: #58C3C3; /*Fondo links menu*/
   --third-color-background: #F55A68; /*Fondo hamburguesa*/
+  --fourth-color-background: #EBEBEB; /*Fondo de Sección*/
   --page-color-background: #F5F4F4; /*Fondo paginas*/
   --warning-color-background: #8B0002; /*Fondo aviso de ambiente entorno*/
 
@@ -12,6 +13,7 @@
   --text-color: #2F2F2F; /*Parrafo*/
   --second-text-color: #EBEBEB; /*Letra footer*/
   --warning-link-text: #FFB6C1; /**/
+  --text-description-color: #4A4A4A; /*Texto Descripción Instituciones */
 }
 
 html {
