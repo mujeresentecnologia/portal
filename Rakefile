@@ -18,12 +18,12 @@ end
 
 desc 'hace la compilacion y genera el sitio estatico con jekyll build con configuraciones de staging'
 task :build_staging do
-  jekyll 'build -q --config _config.yml,_config-staging.yml'
+  jekyll 'build -q --config _config.yml,_config-staging.yml --drafts'
 end
 
 desc 'ejecuta el sitio localmente con jekyll serve con las configuraciones de staging'
 task :preview_staging => [:clean] do
-  jekyll 'serve --config _config.yml,_config-staging.yml --watch'
+  jekyll 'serve --config _config.yml,_config-staging.yml --watch --drafts'
 end
 
 desc 'ejecuta el sitio localmente con jekyll serve'
@@ -35,7 +35,7 @@ end
 
 desc 'ejecuta pruebas con html-proofer'
 task :test_html do
-  options = { :assume_extension => true, :check_html => true, :enforce_https => false }
+  options = { :assume_extension => true, :check_html => true, :enforce_https => false}
   HTMLProofer.check_directory("./_site", options).run
 end
 

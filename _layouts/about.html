@@ -3,7 +3,7 @@
 
 <head>
   {% include head.html %}
-  <link rel="stylesheet" href="assets/css/about.css">
+  <link rel="stylesheet" href="{% if page.permalink %}../{% endif %}assets/css/about.css">
 </head>
 
 <body>
@@ -40,7 +40,7 @@
       {% for org in site.data.organizaciones %}
       <div id="met_org_{{ org["id"] }}" class="row flex">
         <div class="col-xs-3 col-md-3 col-xs-offset-1 col-md-offset-1 logo">
-          <img  src="assets/images/{{ org['logo'] }}" alt="{{ org['name'] }}" />
+          <img  src="{% if page.permalink %}../{% endif %}assets/images/{{ org['logo'] }}" alt="{{ org['name'] }}" />
         </div>
         <div class="col-xs-7 col-md-7">
           <h3>{{ org["name"] | upcase }}</h3>

@@ -12,13 +12,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><strong>MUJERES EN TECNOLOG&Iacute;A</strong></a>
+            <a class="navbar-brand" href="{% if page.permalink %}../{% endif %}index.html"><strong>MUJERES EN TECNOLOG&Iacute;A</strong></a>
         </div>
 
         <div class="met_navbar_no_border collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 {% for item in site.data.menu %}
-                  <li class="met_navbar_color_{{ item.color }}"><a href="{{ item.link }}">{{ item.nombre }}</a></li>
+                  <li class="met_navbar_color_{{ item.color }}"><a href="{% if page.permalink %}../{% endif %}{{ item.link }}">{{ item.nombre }}</a></li>
                 {% endfor %}
             </ul>
         </div>

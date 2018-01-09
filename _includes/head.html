@@ -1,12 +1,12 @@
 <title>{{ site.title }}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="{{ site.description }}">
-<link href="assets/css/bootstrap-3.3.7.min.css" rel="stylesheet">
+<link href="{% if page.permalink %}../{% endif %}assets/css/bootstrap-3.3.7.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,700">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gudea:400,700">
-<link rel="stylesheet" href="assets/css/main.css">
-<link rel="stylesheet" href="assets/css/navbar.css">
-<link rel="stylesheet" href="assets/css/banner.css">
+<link rel="stylesheet" href="{% if page.permalink %}../{% endif %}assets/css/main.css">
+<link rel="stylesheet" href="{% if page.permalink %}../{% endif %}assets/css/navbar.css">
+<link rel="stylesheet" href="{% if page.permalink %}../{% endif %}assets/css/banner.css">
 <script src="https://code.jquery.com/jquery-1.12.2.min.js" integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk=" crossorigin="anonymous"></script>
-<script src="assets/js/bootstrap-3.3.7.min.js"></script>
+<script src="{% if page.permalink %}../{% endif %}assets/js/bootstrap-3.3.7.min.js"></script>
 {% include google_analytics.html %}
