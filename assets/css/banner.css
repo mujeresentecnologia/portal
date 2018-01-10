@@ -1,0 +1,30 @@
+---
+---
+{% for banner in site.data.banners %}
+.met_banner_{{ banner[0] }} {
+  background:
+    linear-gradient(
+      rgba(82, 72, 156, 0.6),
+      rgba(82, 72, 156, 0.6)
+    ),
+    url("../images/{{ banner[1][0]['img'] }}");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;  
+}
+
+{% endfor %}
+
+.met_banner_text {
+  color: #FFFFFF;
+  float: right;
+  min-width: 250px;
+  padding-right: 2em;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: right;
+  width: 30%;
+  font-size: 2em;
+}

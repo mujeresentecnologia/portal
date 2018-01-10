@@ -101,11 +101,24 @@ end
 
 require 'nokogiri'
 require 'yaml'
+require 'byebug'
 
 def load_config(env)
   YAML.load_file("_config-#{env}.yml")
 end
 
+def load_main_config()
+  YAML.load_file("_config.yml")
+end
+
+def load_data(file)
+  YAML.load_file("_data/#{file}.yml")
+end
+
 def load_home
-  Nokogiri::HTML(File.open('_site/index.html'))
+  Nokogiri::HTML(File.open('_site/index.html'), nil, Encoding::UTF_8.to_s)
+end
+
+def load_page(page)
+  Nokogiri::HTML(File.open("_site/#{page}.html"), nil, Encoding::UTF_8.to_s)
 end

@@ -1,0 +1,56 @@
+:root {
+  --primary-color-background: #52489C; /*Fondo barra y footer*/
+  --second-color-background: #58C3C3; /*Fondo links menu*/
+  --third-color-background: #F55A68; /*Fondo hamburguesa*/
+  --fourth-color-background: #EBEBEB; /*Fondo de Sección*/
+  --page-color-background: #F5F4F4; /*Fondo paginas*/
+  --warning-color-background: #8B0002; /*Fondo aviso de ambiente entorno*/
+
+  --menu-color-lines: #FFFFFF; /*Lineas hamburguesa*/
+  --links-color: #FFFFFF; /*Links del menu*/
+  --title-color-dark: #52489C; /*Titulo pagina oscuro*/
+  --title-color-light: #FFFFFF; /*Titulo pagina claro*/
+  --text-color: #2F2F2F; /*Parrafo*/
+  --second-text-color: #EBEBEB; /*Letra footer*/
+  --warning-link-text: #FFB6C1; /**/
+  --text-description-color: #4A4A4A; /*Texto Descripción Instituciones */
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+   margin:0 0 3em 0;
+   height:100%;
+   font-family: 'Gudea', sans-serif;
+   background-color: var(--page-color-background);
+}
+
+footer {
+  font-family: 'Gudea', sans-serif;
+  text-align: center;
+  background-color: var(--primary-color-background);
+  color: black;
+  height: 3em;
+  padding: 1em;
+  position:absolute;
+  bottom:0;
+  width:100%;
+}
+
+footer p {
+  color: var(--second-text-color);
+}
+
+.met_content {
+  padding: 4em 0 0 0;
+  font-family: 'Gudea', sans-serif;
+}
+
+.met_content p {
+	text-align: center;
+  color: var(--text-color);
+  font-size: 1.4em;
+}
