@@ -43,25 +43,40 @@ describe 'Organizaciones' do
     context "Cuando estoy en la página quienes somos" do
       let(:about) { load_page("about") }
       let(:organizaciones) { load_data("organizaciones") }
-      it "Puedo ver el título de cada institucion" do
+
+      it "Puedo ver el título de cada institucion que tiene contenido" do        
         organizaciones.each do |org|
-          name = org["name"]
-          h3_search_pattern = "div#met_org_" + org['id'].to_s + " h3"
-          h3_element = about.css(h3_search_pattern)
-          element_text = h3_element[0].text
-          
-          expect(element_text).to match(name.upcase)
+          if org["content"]
+            name = org["name"]
+            h3_search_pattern = "div#met_org_" + org['id'].to_s + " h3"
+            h3_element = about.css(h3_search_pattern)
+            element_text = h3_element[0].text
+            expect(element_text).to match(name.upcase)
+          else
+            empty_element = 0
+            div_search_pattern = "div#met_org_" + org['id'].to_s
+            div_element = about.css(div_search_pattern)
+            expect(div_element.size).to eq(empty_element)
+          end
         end
       end 
 
       it "Puedo ver la descripción de cada institucion" do
         organizaciones.each do |org|
-          content = org["content"]
-          p_search_pattern = "div#met_org_" + org['id'].to_s + " p"
-          paragraph = about.css(p_search_pattern)
-          expected_text = paragraph[0].text
-          
-          expect(expected_text).to match(content)
+          if org["content"]
+            content = org["content"]
+            p_search_pattern = "div#met_org_" + org['id'].to_s + " p"
+            paragraph = about.css(p_search_pattern)
+  
+            expected_text = paragraph[0].text
+            expect(expected_text).to match(content)
+          else 
+            empty_element = 0
+            div_search_pattern = "div#met_org_" + org['id'].to_s
+            description = about.css(div_search_pattern)
+
+            expect(description.size).to eq(empty_element)
+          end
         end
       end 
 
@@ -83,16 +98,24 @@ describe 'Organizaciones' do
 
       it "Deberia mostrar logo de la institución de cada organización" do
         organizaciones.each do |org|
-          logo = org["logo"]
-          name = org["name"]
-          image_search_pattern = "div#met_org_" + org['id'].to_s + " img"
-          images = about.css(image_search_pattern)
-          image_src = images[0]["src"]
-          image_alt = images[0]["alt"]
-          expected_src_value = "assets/images/" + logo
-          
-          expect(image_src).to match(expected_src_value)
-          expect(image_alt).to match(name)
+          if org["content"]
+            logo = org["logo"]
+            name = org["name"]
+            image_search_pattern = "div#met_org_" + org['id'].to_s + " img"
+            images = about.css(image_search_pattern)
+            image_src = images[0]["src"]
+            image_alt = images[0]["alt"]
+            expected_src_value = "assets/images/" + logo
+            
+            expect(image_src).to match(expected_src_value)
+            expect(image_alt).to match(name)
+          else
+            empty_element = 0
+            div_search_pattern = "div#met_org_" + org['id'].to_s
+            images = about.css(div_search_pattern)
+
+            expect(images.size).to eq(empty_element)
+          end
         end
       end
     end

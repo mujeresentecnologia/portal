@@ -38,20 +38,22 @@
         </div>
       </div>
       {% for org in site.data.organizaciones %}
-      <div id="met_org_{{ org["id"] }}" class="row flex">
-        <div class="col-xs-3 col-md-3 col-xs-offset-1 col-md-offset-1 logo">
-          <img  src="assets/images/{{ org['logo'] }}" alt="{{ org['name'] }}" />
-        </div>
-        <div class="col-xs-7 col-md-7">
-          <h3>{{ org["name"] | upcase }}</h3>
-          <p>
-            {{ org["content"] }}
-          </p>
-          {% if org["url"] != null %}
-            <a href="{{ org['url'] }}" target="_blank">Sitio Web</a>
-          {% endif %}
-        </div>
-      </div>
+        {% if org["content"] %}
+          <div id="met_org_{{ org["id"] }}" class="row flex">
+            <div class="col-xs-3 col-md-3 col-xs-offset-1 col-md-offset-1 logo">
+              <img  src="assets/images/{{ org['logo'] }}" alt="{{ org['name'] }}" />
+            </div>
+            <div class="col-xs-7 col-md-7">
+              <h3>{{ org["name"] | upcase }}</h3>
+              <p>
+                {{ org["content"] }}
+              </p>
+              {% if org["url"] != null %}
+                <a href="{{ org['url'] }}" target="_blank">Sitio Web</a>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
       {% endfor %}
     </div>
   </section>

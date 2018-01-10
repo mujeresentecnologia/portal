@@ -46,3 +46,13 @@
   logo: logo_kodea.png
   position: left
   url: http://www.kodea.org
+
+- id: 6
+  name: Universidad de Chile
+  logo: logo_udechile.png
+  position: left
+
+- id: 7
+  name: Inacap
+  logo: logo_inacap.png
+  position: center
