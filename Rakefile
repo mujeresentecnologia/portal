@@ -13,7 +13,7 @@ end
 
 desc 'hace la compilacion y genera el sitio estatico con jekyll build'
 task :build do
-  jekyll 'build -q'
+  jekyll 'build -q --drafts'
 end
 
 desc 'hace la compilacion y genera el sitio estatico con jekyll build con configuraciones de staging'
@@ -28,7 +28,7 @@ end
 
 desc 'ejecuta el sitio localmente con jekyll serve'
 task :preview => [:clean] do
-  jekyll 'serve --watch'
+  jekyll 'serve --watch --drafts'
 end
 
 # Pruebas

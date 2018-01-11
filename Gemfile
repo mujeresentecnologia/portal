@@ -7,7 +7,10 @@ source "https://rubygems.org" do
 	group :test do
 	  gem 'html-proofer'
 	  gem 'rspec'
-	  gem 'byebug'
+		gem 'byebug'
+		gem 'capybara'
+		gem 'rack'
+		gem 'rack-jekyll'
 	end
 
 	group :jekyll_plugins do
