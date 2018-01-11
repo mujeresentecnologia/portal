@@ -8,8 +8,6 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
-    archive-zip (0.7.0)
-      io-like (~> 0.3.0)
     byebug (9.1.0)
     capybara (2.17.0)
       addressable
@@ -18,11 +16,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (>= 2.0, < 4.0)
-    childprocess (0.8.0)
-      ffi (~> 1.0, >= 1.0.11)
-    chromedriver-helper (1.1.0)
-      archive-zip (~> 0.7.0)
-      nokogiri (~> 1.6)
     colorator (1.1.0)
     colorize (0.8.1)
     concurrent-ruby (1.0.5)
@@ -42,7 +35,6 @@ GEM
       yell (~> 2.0)
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
-    io-like (0.3.0)
     jekyll (3.6.2)
       addressable (~> 2.4)
       colorator (~> 1.0)
@@ -107,16 +99,12 @@ GEM
       rspec-support (~> 3.7.0)
     rspec-support (3.7.0)
     ruby_dep (1.5.0)
-    rubyzip (1.2.1)
     safe_yaml (1.0.4)
     sass (3.5.3)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    selenium-webdriver (3.8.0)
-      childprocess (~> 0.5)
-      rubyzip (~> 1.0)
     thread_safe (0.3.6)
     typhoeus (0.8.0)
       ethon (>= 0.8.0)
@@ -132,7 +120,6 @@ PLATFORMS
 DEPENDENCIES
   byebug!
   capybara!
-  chromedriver-helper!
   html-proofer!
   jekyll (~> 3.6.2)!
   jekyll-feed (~> 0.6)!
@@ -142,7 +129,6 @@ DEPENDENCIES
   rack-jekyll!
   rake!
   rspec!
-  selenium-webdriver!
 
 RUBY VERSION
    ruby 2.4.2p198
