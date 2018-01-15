@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'capybara_helper'
 require 'yaml'
 
 describe "Posts", :type => :feature do
