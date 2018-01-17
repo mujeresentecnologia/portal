@@ -17,7 +17,7 @@
   mujeres desarrollen su potencial y alcancen posiciones de toma de decisiones, a través del fortalecimiento de redes de apoyo, 
   fomento de habilidades de liderazgo y visibilidad de roles."
   logo: logo_women-in-management.png
-  position: left
+  position: right
   url: http://www.wimchile.cl
   
 - id: 3
@@ -26,7 +26,7 @@
   Trabajamos con mujeres y niñas por medio de talleres y capacitaciones y estamos presentes en las regiones de Valparaíso, Metropolitana, 
   Bio Bio y los Lagos."
   logo: logo_git.png
-  position: right
+  position: left
   url: http://www.girlsintechchile.com/
 
 - id: 4
@@ -37,15 +37,6 @@
   logo: logo_DUOC.png
   position: right
   url: https://www.facebook.com/EscuelaITDuocUC
- 
-- id: 5
-  name: Kodea
-  content: "Kodea es una fundación creada por gente vinculada a la innovación, la tecnología, la educación y el trabajo con sentido. 
-  Es una iniciativa joven que cuenta con una mirada multidimensional e inclusiva y el compromiso de querer construir un ambicioso proyecto
-  cuyo alcance sea generar profundos cambios en la realidad del país en materia de capital humano TI e inclusión femenina y otras minorías."
-  logo: logo_kodea.png
-  position: left
-  url: http://www.kodea.org
 
 - id: 6
   name: Universidad de Chile
@@ -55,4 +46,22 @@
 - id: 7
   name: Inacap
   logo: logo_inacap.png
-  position: center
+  position: right
+
+- id: 5
+  name: Kodea
+  content: "Kodea es una fundación creada por gente vinculada a la innovación, la tecnología, la educación y el trabajo con sentido.
+  Es una iniciativa joven que cuenta con una mirada multidimensional e inclusiva y el compromiso de querer construir un ambicioso proyecto
+  cuyo alcance sea generar profundos cambios en la realidad del país en materia de capital humano TI e inclusión femenina y otras minorías."
+  logo: logo_kodea.png
+  position: left
+  url: http://www.kodea.org
+
+- id: 8
+  name: ThoughtWorks
+  content: "Somos una compañía de software y una comunidad de personas apasionadas, movida por objetivos.
+  Pensamos de forma disruptiva para ofrecer tecnología que haga frente a los retos más difíciles de nuestros clientes,
+  a la vez que buscamos revolucionar la industria de TI y crear un cambio social positivo."
+  logo: logo_tw.png
+  position: right
+  url: https://www.thoughtworks.com/es/
