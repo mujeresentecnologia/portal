@@ -3,7 +3,28 @@ ul {
 }
 
 .met_post_title a {
-  font-weight: 600;
+  font-weight: 400;
   font-size: 26px;
   color: var(--title-color-dark);
+  font-family: 'Oswald', sans-serif ;
+}
+
+.met_post_excerpt p {
+  text-align: left;
+  font-size: 14px;
+  width: 70%;
+}
+.met_post_excerpt a {
+	font-weight: 700;
+	color: var(--third-color-background);
+}
+.met_post_author p {
+	text-align: left;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+.met_post_author p a{
+	font-weight: 700;
+	color: var(--second-color-background);
 }
