@@ -37,7 +37,8 @@
           </h1>
         </div>
       </div>
-      {% for org in site.data.organizaciones %}
+      {% assign orglist = site.data.organizaciones | sort: 'name'  %}
+      {% for org in orglist %}
         {% if org["content"] %}
           <div id="met_org_{{ org["id"] }}" class="row flex">
             <div class="col-xs-3 col-md-3 col-xs-offset-1 col-md-offset-1 logo">
