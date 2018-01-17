@@ -1,9 +1,20 @@
 require 'rspec'
+require_relative '../_utils/organizations.rb'
 
 describe 'Organizaciones' do
   context 'cuando organizaciones estan definidas en el archivo _data/organizaciones.yml' do
     let(:organizaciones) { load_data('organizaciones') }
     let(:org_logos) { organizaciones.map {|org| org['logo']} }
+
+    context 'Entonces, retorno una organizacion' do
+      it 'Cuando recibo un ID' do
+        expected_name = "Laboratoria"
+        id = 1
+        organization = load_organization(id)
+
+        expect(organization['name']).to eq(expected_name)
+      end
+    end
 
     context 'cuando mirando el archivo' do
       it 'imagenes de logo deben existir' do

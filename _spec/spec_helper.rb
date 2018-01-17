@@ -130,3 +130,11 @@ end
 def load_page(page)
   Nokogiri::HTML(File.open("_site/#{page}.html"), nil, Encoding::UTF_8.to_s)
 end
+
+def load_drafts
+  Dir["_drafts/*.md"]
+end
+
+def load_markdown(file)
+  YAML.load_file("#{file}.md")
+end
