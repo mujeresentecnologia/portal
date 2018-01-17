@@ -33,6 +33,11 @@ h3 {
 .dark, .light p {
   text-align: justify;
 }
+
+.dark h1 {
+  color: var(--title-color-light);
+}
+
 .light h1, h3 {
   color: var(--title-color-dark);
 }

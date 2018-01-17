@@ -44,6 +44,13 @@ footer p {
   color: var(--second-text-color);
 }
 
+h1 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  color: var(--title-color-dark);
+}
+
 .met_content {
   padding: 4em 0 0 0;
   font-family: 'Gudea', sans-serif;
