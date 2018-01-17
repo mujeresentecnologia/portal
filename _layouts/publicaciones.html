@@ -12,37 +12,40 @@
   <div class="container">
       <div>
         <div class="met_content">
-        <div>
-          <h1>{{ page.title | upcase }}</h1>
-        </div>
+          <div>
+            <h1>{{ page.title | upcase }}</h1>
+          </div>
           <ul>
             {% for post in site.posts %}
             <li>
               <div class="met_post_date">
-              {% assign m = post.date | date: "%-m" %}
-              {{ post.date | date: "%-d DE" }}
-              {% case m %}
-                {% when '1' %}ENERO
-                {% when '2' %}FEBRERO
-                {% when '3' %}MARZO
-                {% when '4' %}ABRIL
-                {% when '5' %}MAYO
-                {% when '6' %}JUNIO
-                {% when '7' %}JULIO
-                {% when '8' %}AGOSTO
-                {% when '9' %}SEPTIEMBRE
-                {% when '10' %}OCTOBRE
-                {% when '11' %}NOVIEMBRE
-                {% when '12' %}DICIEMBRE
-              {% endcase %}
-              {{ post.date | date: "%Y" }}
+                {% assign m = post.date | date: "%-m" %}
+                {{ post.date | date: "%-d DE" }}
+                {% case m %}
+                  {% when '1' %}ENERO
+                  {% when '2' %}FEBRERO
+                  {% when '3' %}MARZO
+                  {% when '4' %}ABRIL
+                  {% when '5' %}MAYO
+                  {% when '6' %}JUNIO
+                  {% when '7' %}JULIO
+                  {% when '8' %}AGOSTO
+                  {% when '9' %}SEPTIEMBRE
+                  {% when '10' %}OCTOBRE
+                  {% when '11' %}NOVIEMBRE
+                  {% when '12' %}DICIEMBRE
+                {% endcase %}
+                {{ post.date | date: "%Y" }}
               </div>
 
               <div class="met_post_title">
                 <a href="{{ post.url }}">{{ post.title | upcase }}</a>
               </div>
               <div class="met_post_excerpt">
-                {{ post.excerpt }} <a href="{{ post.url }}">Ver más...</a>
+                <p>{{ post.content | remove: '<p>' | remove: '</p>' | truncatewords:30 }} <a href="{{ post.url }}">Ver más</a></p>
+              </div>
+              <div class="met_post_author">
+                <p>Publicado por <a href="" target="_blank">Institucion</a></p>
               </div>
             </li>
             {% endfor %}
