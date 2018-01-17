@@ -1,0 +1,9 @@
+ul {
+  list-style: none;
+}
+
+.met_post_title a {
+  font-weight: 600;
+  font-size: 26px;
+  color: var(--title-color-dark);
+}
