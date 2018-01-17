@@ -1,7 +1,7 @@
+require 'capybara_helper'
+require 'yaml'
+require_relative '../_utils/organizations'
 require 'rspec'
-
-describe "Drafts" do
-  let(:drafts_files) { Dir["_drafts/*.md"] }
 
   it "drafts should only be generated for staging environment" do
     if ENV['ENTORNO'] == "staging-env"; then

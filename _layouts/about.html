@@ -9,21 +9,21 @@
 <body>
   {% include navbar.html %}
   {% include banner.html %}
-  <section class="dark">
+  <section class="met_dark">
     <div class="container">
       <div class="row">
         <div class="col-xs-10 col-md-10 col-xs-offset-1 col-md-offset-1">
-          <h1 id="description_title">
-            {{ site.data.static_content[page.layout]["description"]["title"] | strip }}
+          <h1>
+            {{ page.title | strip }}
           </h1>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-10 col-md-5 col-xs-offset-1 col-md-offset-1">
-          <p id="left_paragraph">{{ site.data.static_content[page.layout]["description"]["left"] | newline_to_br }}</p>
+          <p>{{ page.first_paragraph | newline_to_br }}</p>
         </div>
         <div class="col-xs-10 col-md-5 col-xs-offset-1 col-md-offset-0">
-            <p id="right_paragraph">{{ site.data.static_content[page.layout]["description"]["right"] | newline_to_br }}</p>
+            <p>{{ page.second_paragraph | newline_to_br }}</p>
           </div>
       </div>
     </div>

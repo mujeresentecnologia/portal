@@ -1,11 +1,11 @@
 ---
 layout: post
 title: Technology Radar
-organization_id: 8
+organization_id: 3
 date: 2018-01-10 18:50:00 -0300
 permalink: /:title
 ---
-¿Adoptas, pruebas, evalúas o arriesgas? La nueva edición del Technology Radar de ThoughtWorks ya está disponible, puedes descargarlo aquí: https://thght.works/2AsT6NW
+¿Adoptas, pruebas, evalúas o arriesgas? La nueva edición del Technology Radar de ThoughtWorks ya está disponible, puedes descargarlo [aquí](https://thght.works/2AsT6NW)
 
 Después de que una nueva edición del Radar está disponible, hacemos el lanzamiento global y lanzamientos regionales alrededor del mundo, ¡y el Volumen 17 no es la excepción! En Latinoamérica, se realizará el lanzamiento regional simultáneamente en Santiago de Chile y Quito. El evento contará con la participación de tecnólogos de primer nivel, quienes hablarán de las últimas tendencias en tecnología y resolverán las dudas de los asistentes.
 
