@@ -3,6 +3,8 @@ require 'yaml'
 require_relative '../_utils/organizations'
 require 'rspec'
 
+describe "Drafts" do
+  let(:drafts_files) { load_drafts }
   it "drafts should only be generated for staging environment" do
     if ENV['ENTORNO'] == "staging-env"; then
 		expect(drafts_files).to all(
