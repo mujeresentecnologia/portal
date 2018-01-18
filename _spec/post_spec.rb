@@ -1,15 +1,50 @@
-require 'capybara_helper'
-require 'yaml'
+require 'rspec'
 
-describe "Posts", :type => :feature do
-  it "Cuando visito las publicaciones verifico si sus URL son validas" do
-    drafts_files = Dir["_drafts/*.md"]
-    
-    drafts_files.each{
-      |file|
+describe "Drafts" do
+  let(:drafts_files) { Dir["_drafts/*.md"] }
+
+  it "drafts should only be generated for staging environment" do
+    if ENV['ENTORNO'] == "staging-env"; then
+		expect(drafts_files).to all(
+        satisfy do |file|
+
+	      post_title = File.basename(file, ".md")
+
+	      post_data = load_draft_data(post_title);
+	      defined_title = post_data[/.*title: ([^\n]*)/,1]
+	      post_page = load_page(post_title)
+
+	      expect(post_page.xpath('//h1').text).to eq(defined_title)
+	    end)
+	  end
+  end
+
+  it "drafts should not be generated for production environment" do
+    if ENV['ENTORNO'] != "staging-env"; then
+		expect(drafts_files).to all(
+			satisfy do |file|
+
+		  post_title = File.basename(file, ".md")
+	    expect(File).not_to exist("_site/#{post_title}.html")
+	  end)
+    end
+  end
+end
+
+describe "Posts" do
+  it "all posts are generated with correct title" do
+    posts_files = Dir["_posts/*.md"]
+
+	  expect(posts_files).to all(
+		  satisfy do |file|
+
       post_title = File.basename(file, ".md")
-      visit "/" + post_title + ".html"
-      expect(page.status_code).to eq(200)
-    }
+
+      post_data = load_post_data(post_title);
+      defined_title = post_data[/.*title: ([^\n]*)/,1]
+      post_page = load_page(post_title)
+
+      expect(post_page.xpath('//h1').text).to eq(defined_title)
+    end)
   end
 end
