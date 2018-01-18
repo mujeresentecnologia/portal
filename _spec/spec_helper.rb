@@ -115,6 +115,14 @@ def load_data(file)
   YAML.load_file("_data/#{file}.yml")
 end
 
+def load_draft_data(file)
+  File.read("_drafts/#{file}.md")
+end
+
+def load_post_data(file)
+  File.read("_posts/#{file}.md")
+end
+
 def load_home
   Nokogiri::HTML(File.open('_site/index.html'), nil, Encoding::UTF_8.to_s)
 end
