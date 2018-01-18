@@ -37,20 +37,21 @@
           </h1>
         </div>
       </div>
-      {% assign orglist = site.data.organizaciones | sort: 'name'  %}
+      {% assign orglist = site.data.organizaciones %}
       {% for org in orglist %}
-        {% if org["content"] %}
-          <div id="met_org_{{ org["id"] }}" class="row flex">
+        {% assign attributes = org[1] %}
+        {% if attributes["content"] %}
+          <div id="met_org_{% increment counter %}" class="row flex">
             <div class="col-xs-3 col-md-3 col-xs-offset-1 col-md-offset-2 logo">
-              <img  src="assets/images/{{ org['logo'] }}" alt="{{ org['name'] }}" />
+              <img  src="assets/images/{{ attributes['logo'] }}" alt="{{ attributes['name'] }}" />
             </div>
             <div class="col-xs-7 col-md-7">
-              <h3>{{ org["name"] | upcase }}</h3>
+              <h3>{{ attributes["name"] | upcase }}</h3>
               <p>
-                {{ org["content"] }}
+                {{ attributes["content"] }}
               </p>
-              {% if org["url"] != null %}
-                <a href="{{ org['url'] }}" target="_blank">Sitio Web</a>
+              {% if attributes["url"] != null %}
+                <a href="{{ attributes['url'] }}" target="_blank">Sitio Web</a>
               {% endif %}
             </div>
           </div>

@@ -23,8 +23,9 @@
 
         <div class="met_logos row no-gutters">
           {% for org in site.data.organizaciones %}
-            <div class="{{ site.data.structure.grid_styles[org.position][0]['style'] }}">
-              <img src="assets/images/{{ org.logo }}" alt="{{ org.name }}"/>
+          {% assign attributes = org[1] %}
+            <div class="{{ site.data.structure.grid_styles[attributes.position][0]['style'] }}">
+              <img src="assets/images/{{ attributes.logo }}" alt="{{ attributes.name }}"/>
             </div>
           {% endfor %}
         </div>
