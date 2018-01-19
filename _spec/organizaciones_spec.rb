@@ -1,16 +1,16 @@
 require 'rspec'
 require_relative '../_utils/organizations.rb'
 
-describe 'Organizaciones' do
-  context 'cuando organizaciones estan definidas en el archivo _data/organizaciones.yml' do
+describe 'Organizations' do
+  context 'When the organizations are defined in _data/organizaciones.yml' do
     let(:organizaciones) { load_data('organizaciones') }
     let(:org_logos) { organizaciones.map {
                                           |org|
                                           attributes = org[1]
                                           attributes['logo']} }
 
-    context 'cuando mirando el archivo' do
-      it 'imagenes de logo deben existir' do
+    context 'And I am looking at the file' do
+      it 'Logos should exist' do
         expect(org_logos).to all(
           satisfy do |logo|
             path = File.join('./assets/images/', logo)
@@ -19,12 +19,12 @@ describe 'Organizaciones' do
       end
     end
 
-    context 'cuando mirando la pagina inicial' do
+    context 'When I am in the Home Page' do
       let(:home) { load_home }
       let(:organizaciones) { load_data('organizaciones') }
       let(:grid_styles) {load_data('structure/grid_styles')}
 
-      it "los logos de todas las organizaciones deben estar en la pagina inicial" do
+      it "I should see all the logos from the organizations" do
         organizaciones.each do |org|
           attributes = org[1]
           element_src = home.css('.met_logos').xpath(%Q{//img[@src="assets/images/#{attributes['logo']}"]})
@@ -35,7 +35,7 @@ describe 'Organizaciones' do
         end
       end
 
-      it "los logos deben estar ordenados de acuerdo con la posicion determinada en el archivo" do
+      it "I should see the logos in the right position, defined in the file" do
         organizaciones.each do |org|
           attributes = org[1]
           element_src = home.css('.met_logos').xpath(%Q{//img[@src="assets/images/#{attributes['logo']}"]})
@@ -46,11 +46,11 @@ describe 'Organizaciones' do
       end
     end
 
-    context "Cuando estoy en la página quienes somos" do
+    context "When I am in About Page" do
       let(:about) { load_page("about") }
       let(:organizaciones) { load_data("organizaciones") }
 
-      it "Should see description of organization if it has content" do
+      it "I should see description of organization if it has content" do
         counter = 0
         organizaciones.each do |org|
           attributes = org[1]
