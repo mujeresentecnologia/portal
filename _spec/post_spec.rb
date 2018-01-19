@@ -8,12 +8,10 @@ describe "Drafts" do
         satisfy do |file|
 
 	      post_title = File.basename(file, ".md")
-
-	      post_data = load_draft_data(post_title);
-	      defined_title = post_data[/.*title: ([^\n]*)/,1]
+	      post_data = load_markdown("_drafts/#{post_title}")
 	      post_page = load_page(post_title)
 
-	      expect(post_page.xpath('//h1').text).to eq(defined_title)
+	      expect(post_page.xpath('//h1').text).to eq(post_data["title"])
 	    end)
 	  end
   end
@@ -32,18 +30,16 @@ end
 
 describe "Posts" do
   it "all posts are generated with correct title" do
-    posts_files = Dir["_posts/*.md"]
+    posts_files = load_posts
 
 	  expect(posts_files).to all(
 		  satisfy do |file|
 
       post_title = File.basename(file, ".md")
-
-      post_data = load_post_data(post_title);
-      defined_title = post_data[/.*title: ([^\n]*)/,1]
+      post_data = load_markdown("_posts/#{post_title}")
       post_page = load_page(post_title)
 
-      expect(post_page.xpath('//h1').text).to eq(defined_title)
+      expect(post_page.xpath('//h1').text).to eq(post_data["title"])
     end)
   end
 end
