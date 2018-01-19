@@ -1,5 +1,4 @@
 require 'rspec'
-require_relative '../_utils/organizations.rb'
 
 describe 'Organizations' do
   context 'When the organizations are defined in _data/organizaciones.yml' do
@@ -50,20 +49,36 @@ describe 'Organizations' do
       let(:about) { load_page("about") }
       let(:organizaciones) { load_data("organizaciones") }
 
-      it "I should see description of organization if it has content" do
+      it "I should see organization content if it has any" do
         counter = 0
         organizaciones.each do |org|
           attributes = org[1]
 
           if attributes["content"]
-
             name = attributes["name"]
-            h3_search_pattern = "div#met_org_" + counter.to_s + " h3"
-            h3_element = about.css(h3_search_pattern)
-            element_text = h3_element.text
+            logo = attributes["logo"]
 
-            expect(element_text).to match(name.upcase)
-            counter += 1
+            expected_title = name.upcase
+            expected_description = attributes["content"]
+            expected_url = attributes["url"]
+            expected_image_src = "assets/images/#{logo}"
+            expected_image_alt = name
+
+            image_tag = about.css("img[alt='#{name}']")
+            image_src = image_tag[0].attributes["src"].value
+            image_alt = image_tag[0].attributes["alt"].value
+            
+            div_content = image_tag[0].parent.parent
+
+            title =   div_content.css('h3').text
+            description =   div_content.css('p').text
+            url =   div_content.css('a')[0].attributes["href"].text
+
+            expect(image_alt).to eq(expected_image_alt)
+            expect(image_src).to eq(expected_image_src)
+            expect(title).to match(expected_title)
+            expect(description).to match(expected_description)
+            expect(url).to match(expected_url)
           end
         end
       end

@@ -41,7 +41,7 @@
       {% for org in orglist %}
         {% assign attributes = org[1] %}
         {% if attributes["content"] %}
-          <div id="met_org_{% increment counter %}" class="row flex">
+          <div class="row flex">
             <div class="col-xs-3 col-md-3 col-xs-offset-1 col-md-offset-2 logo">
               <img  src="assets/images/{{ attributes['logo'] }}" alt="{{ attributes['name'] }}" />
             </div>
