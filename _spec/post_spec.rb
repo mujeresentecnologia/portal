@@ -1,6 +1,3 @@
-require 'capybara_helper'
-require 'yaml'
-require_relative '../_utils/organizations'
 require 'rspec'
 
 describe "Drafts" do
