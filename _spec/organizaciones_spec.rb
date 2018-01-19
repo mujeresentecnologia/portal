@@ -50,7 +50,6 @@ describe 'Organizations' do
       let(:organizaciones) { load_data("organizaciones") }
 
       it "I should see organization content if it has any" do
-        counter = 0
         organizaciones.each do |org|
           attributes = org[1]
 
@@ -82,6 +81,26 @@ describe 'Organizations' do
           end
         end
       end
+
+      it "I should not see organization content if it doesn`t have content" do
+        organizaciones.each do |org|
+          attributes = org[1]
+
+          if attributes["content"] == nil
+            name = attributes["name"]
+            logo = attributes["logo"]
+
+            expected_title = name.upcase
+            expected_image_src = "assets/images/#{logo}"
+            expected_image_alt = name
+            empty = 0;
+
+            image_tag = about.css("img[alt='#{name}']")
+            expect(image_tag.size).to eq(empty)
+          end
+        end
+      end
+      
     end
   end
 end
