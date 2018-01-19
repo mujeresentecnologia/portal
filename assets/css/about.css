@@ -22,7 +22,7 @@ h3 {
   font-size: 1.2em;
 }
 
-.light {
+.met_light {
   background-color: var(--fourth-color-background);
   color: var(--text-description-color);
   font-family: 'Gudea', sans-serif;
@@ -30,19 +30,19 @@ h3 {
   font-size: 1em;
 }
 
-.met_dark, .light p {
+.met_dark, .met_light p {
   text-align: justify;
 }
 
-.dark h1 {
+.met_dark h1 {
   color: var(--title-color-light);
 }
 
-.light h1, h3 {
+.met_light h1, h3 {
   color: var(--title-color-dark);
 }
 
-.light a {
+.met_light a {
   color: var(--third-color-background);
   font-weight: bolder;
 }
