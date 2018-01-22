@@ -2,6 +2,7 @@
 layout: post
 title: Technology Radar
 organization_id: thoughtworks
+published_by: thoughtworks
 date: 2018-01-10 18:50:00 -0300
 permalink: /:title
 ---
