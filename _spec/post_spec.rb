@@ -65,51 +65,55 @@ describe "Drafts", :type => :feature do
   end
 
   it "all post with links inside the content should open in other page" do
-    expect(drafts_files).to all(
-		  satisfy do |file|
+    if ENV['ENTORNO'] == "staging-env"; then
+      expect(drafts_files).to all(
+        satisfy do |file|
 
-        post_title = File.basename(file, ".md")
-        post_data = load_markdown("_drafts/#{post_title}")
-        post_page = load_page(post_title)
+          post_title = File.basename(file, ".md")
+          post_data = load_markdown("_drafts/#{post_title}")
+          post_page = load_page(post_title)
 
-        expected_status_code = 200
-        expected_target_value = "_blank"
+          expected_status_code = 200
+          expected_target_value = "_blank"
 
-        tags = post_page.css(".met_content").css("a")
+          tags = post_page.css(".met_content").css("a")
 
-        tags.each{ |tag|
-          target_from_post = tag.attributes["target"].text
-          href_from_post = tag.attributes["href"].text
-          visit href_from_post
-          expect(target_from_post).to match(expected_target_value)
-          expect(page.status_code).to eq(expected_status_code)
-        }
-      end)
+          tags.each{ |tag|
+            target_from_post = tag.attributes["target"].text
+            href_from_post = tag.attributes["href"].text
+            visit href_from_post
+            expect(target_from_post).to match(expected_target_value)
+            expect(page.status_code).to eq(expected_status_code)
+          }
+        end)
+    end
   end
 
   it "all post should redirect given an organization image " do
-    expect(drafts_files).to all(
-		  satisfy do |file|
+    if ENV['ENTORNO'] == "staging-env"; then
+      expect(drafts_files).to all(
+        satisfy do |file|
 
-        post_title = File.basename(file, ".md")
-        post_data = load_markdown("_drafts/#{post_title}")
-        post_page = load_page(post_title)
-        id = post_data["organization_id"]
-        expected_url = organizations[id]['url']
+          post_title = File.basename(file, ".md")
+          post_data = load_markdown("_drafts/#{post_title}")
+          post_page = load_page(post_title)
+          id = post_data["organization_id"]
+          expected_url = organizations[id]['url']
 
-        expected_status_code = 200
-        expected_target_value = "_blank"
+          expected_status_code = 200
+          expected_target_value = "_blank"
 
-        tags = post_page.css(".met_content").css("a")
-        last_tag = tags.last
+          tags = post_page.css(".met_content").css("a")
+          last_tag = tags.last
 
-        target_from_logo = last_tag.attributes["target"].text
-        href_from_logo = last_tag.attributes["href"].text
-        visit href_from_logo
-        expect(href_from_logo).to match(expected_url)
-        expect(target_from_logo).to match(expected_target_value)
-        expect(page.status_code).to eq(expected_status_code)
-      end)
+          target_from_logo = last_tag.attributes["target"].text
+          href_from_logo = last_tag.attributes["href"].text
+          visit href_from_logo
+          expect(href_from_logo).to match(expected_url)
+          expect(target_from_logo).to match(expected_target_value)
+          expect(page.status_code).to eq(expected_status_code)
+        end)
+    end
   end
 end
 
