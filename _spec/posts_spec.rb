@@ -4,8 +4,8 @@ describe 'All posts' do
 
   context 'Published by' do
     let(:organizaciones) { load_data('organizaciones') }
-    let(:drafts_files) { load_drafts }
-    let(:posts_files) { load_posts }
+    let(:drafts_files) { load_all_drafts }
+    let(:posts_files) { load_all_posts }
 
     it 'all drafts should be published by one existing organization' do
       expect(drafts_files).to all(
@@ -13,8 +13,8 @@ describe 'All posts' do
           post_title = File.basename(draft, ".md")
           post_data = load_markdown("_drafts/#{post_title}")
 
-          expect(post_data["published_by"]).to be
-          expect(organizaciones[post_data["published_by"]]).to be
+          expect(post_data["organization_id"]).to be
+          expect(organizaciones[post_data["organization_id"]]).to be
         end)
     end
 
@@ -24,8 +24,8 @@ describe 'All posts' do
           post_title = File.basename(post, ".md")
           post_data = load_markdown("_drafts/#{post_title}")
 
-          expect(post_data["published_by"]).to be
-          expect(organizaciones[post_data["published_by"]]).to be
+          expect(post_data["organization_id"]).to be
+          expect(organizaciones[post_data["organization_id"]]).to be
         end)
     end
   end
@@ -51,7 +51,7 @@ describe 'All posts' do
             expect(links_on_page[0].text).to eq(post_data["title"].upcase)
             expect(links_on_page[1].text).to eq("Ver más")
 
-            org = organizaciones[post_data["published_by"]]
+            org = organizaciones[post_data["organization_id"]]
 
             expect(link_organization.text).to eq(org["name"])
             expect(link_organization.attribute('href').text).to eq(org["url"])
