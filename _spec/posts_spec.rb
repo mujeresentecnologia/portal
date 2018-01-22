@@ -3,7 +3,7 @@ require 'rspec'
 describe 'All posts' do
   
   context 'Drafts' do
-    let(:drafts_files) { load_drafts }
+    let(:drafts_files) { load_all_drafts }
     let(:posts_page) { load_page('publicaciones')}
 
     it 'page for all publications should show drafts for staging environment' do

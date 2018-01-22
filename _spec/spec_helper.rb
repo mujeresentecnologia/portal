@@ -123,11 +123,11 @@ def load_page(page)
   Nokogiri::HTML(File.open("_site/#{page}.html"), nil, Encoding::UTF_8.to_s)
 end
 
-def load_drafts
+def load_all_drafts
   Dir["_drafts/*.md"]
 end
 
-def load_posts
+def load_all_posts
   Dir["_posts/*.md"]
 end
 
