@@ -16,7 +16,8 @@
         </div>
           {{ content }}
         </div>
-        <!--img src="assets/images/{{ org.logo }}" alt="{{ org.name }}"/-->
+        {% assign org = site.data.organizaciones %}
+        <img src="assets/images/{{ org[page.organization_id]['logo'] }}" alt="{{ org[page.organization_id]['name'] }}">
       </div>
   </div>
   {% include footer.html %}
