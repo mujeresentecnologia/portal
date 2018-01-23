@@ -3,30 +3,38 @@
 
 <head>
   {% include head.html %}
+  <link rel="stylesheet" href="assets/css/publicaciones.css">
+  <link rel="stylesheet" href="assets/css/post.css">
 </head>
 
 <body>
-  {% include navbar.html %}
-  {% include banner.html %}
-  <div class="container">
-      <div>
-        <div class="met_content">
-        {% assign month = page.date | date: "%-m" %}
-        {% assign index = "mes" | append: month %}
-          <div class="met_post_date">
-            {{ page.date | date: "%-d DE" }} {{ site.data.months[index] | upcase }} {{ page.date | date: "%Y" }}
+  {% include navbar.html %} {% include banner.html %}
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-12">
+          <div class="met_post">
+            {% assign month = page.date | date: "%-m" %} {% assign index = "mes" | append: month %}
+            <div class="met_post_date">
+              {{ page.date | date: "%-d DE" }} {{ site.data.months[index] | upcase }} {{ page.date | date: "%Y" }}
+            </div>
+            <div>
+              <h1>{{ page.title | upcase }}</h1>
+            </div>
+            {{ content }}
+            <div class="met_post_publisher">
+              {% assign org = site.data.organizaciones %} PUBLICADO POR
+              <br/>
+              <br/>
+              <a href="{{ org[page.organization_id]['url'] }}" target="_blank">
+                <img src="assets/images/{{ org[page.organization_id]['logo'] }}" alt="{{ org[page.organization_id]['name'] }}">
+              </a>
+            </div>
           </div>
-          <div>
-            <h1>{{ page.title }}</h1>
-          </div>
-          {{ content }}
-
-          {% assign org = site.data.organizaciones %}
-          PUBLICADO POR
-          <a href="{{ org[page.organization_id]['url'] }}" target="_blank"><img src="assets/images/{{ org[page.organization_id]['logo'] }}" alt="{{ org[page.organization_id]['name'] }}"></a>
         </div>
+      </div>
     </div>
-  </div>
+  </section>
   {% include footer.html %}
 </body>
 

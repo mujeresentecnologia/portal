@@ -1,0 +1,27 @@
+.met_post {
+  padding: 6em 0 0 0;
+  font-family: 'Gudea', sans-serif;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.met_post p {
+  text-align: justify;
+  padding-bottom: 0.5em;
+}
+
+.met_post_date {
+  font-size: 1.2em;
+}
+
+.met_post_publisher {
+  padding: 2em 0 2em 0;
+}
+
+h1 {
+  font-weight: 400;
+  text-align: center;
+  color: var(--title-color-dark);
+  margin-bottom: 1em;
+}
+

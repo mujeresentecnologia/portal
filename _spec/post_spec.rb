@@ -14,7 +14,7 @@ describe "Drafts", :type => :feature do
           post_data = load_markdown("_drafts/#{post_title}")
           post_page = load_page(post_title)
 
-          expect(post_page.xpath('//h1').text).to eq(post_data["title"])
+          expect(post_page.xpath('//h1').text).to eq(post_data["title"].upcase)
         end)
 	  end
   end
@@ -76,7 +76,7 @@ describe "Drafts", :type => :feature do
           expected_status_code = 200
           expected_target_value = "_blank"
 
-          tags = post_page.css(".met_content").css("a")
+          tags = post_page.css(".met_post").css("a")
 
           tags.each{ |tag|
             target_from_post = tag.attributes["target"].text
@@ -103,7 +103,7 @@ describe "Drafts", :type => :feature do
           expected_status_code = 200
           expected_target_value = "_blank"
 
-          tags = post_page.css(".met_content").css("a")
+          tags = post_page.css(".met_post").css("a")
           last_tag = tags.last
 
           target_from_logo = last_tag.attributes["target"].text
