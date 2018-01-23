@@ -11,16 +11,21 @@
   <div class="container">
       <div>
         <div class="met_content">
-        <div>
-          <h1>{{ page.title }}</h1>
-        </div>
+        {% assign month = page.date | date: "%-m" %}
+        {% assign index = "mes" | append: month %}
+          <div class="met_post_date">
+            {{ page.date | date: "%-d DE" }} {{ site.data.months[index] | upcase }} {{ page.date | date: "%Y" }}
+          </div>
+          <div>
+            <h1>{{ page.title }}</h1>
+          </div>
           {{ content }}
 
           {% assign org = site.data.organizaciones %}
           PUBLICADO POR
           <a href="{{ org[page.organization_id]['url'] }}" target="_blank"><img src="assets/images/{{ org[page.organization_id]['logo'] }}" alt="{{ org[page.organization_id]['name'] }}"></a>
-          </div>
-      </div>
+        </div>
+    </div>
   </div>
   {% include footer.html %}
 </body>

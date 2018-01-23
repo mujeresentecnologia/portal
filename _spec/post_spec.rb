@@ -115,6 +115,25 @@ describe "Drafts", :type => :feature do
         end)
     end
   end
+
+  it "all post should render the publication date in traditional format" do
+    if ENV['ENTORNO'] == "staging-env"; then
+      months = load_data("months")
+      expect(drafts_files).to all(
+        satisfy do |file|
+          post_title = File.basename(file, ".md")
+          post_data = load_markdown("_drafts/#{post_title}")
+          post_page = load_page(post_title)
+          id = post_data["organization_id"]
+          post_date = post_data["date"]
+          expected_formatted_date = format_traditional_date(post_date, months).upcase
+          page_date = post_page.css(".met_post_date").text
+
+          expect(page_date).to match(expected_formatted_date)
+        end)
+    end
+  end
+
 end
 
 describe "Posts" do

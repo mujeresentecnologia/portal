@@ -134,3 +134,9 @@ end
 def load_markdown(file)
   YAML.load_file("#{file}.md")
 end
+
+def format_traditional_date(date, months)
+  month_number = date.strftime("%m").to_i
+  month_name = months["mes#{month_number}"]
+  date.strftime("%d") + " de " + month_name + " " + date.strftime("%Y")
+end

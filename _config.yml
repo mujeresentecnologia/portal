@@ -6,6 +6,7 @@ description: >-
   potenciar y ampliar iniciativas pro mujeres en tecnología.
 url: "https://mujeresentecnologia.github.io"
 
+
 markdown: kramdown
 plugins:
   - jekyll-last-modified-at

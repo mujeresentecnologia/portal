@@ -19,22 +19,10 @@
             {% for post in site.posts %}
             <li id="{{ post.title }}">
               <div class="met_post_date">
-                {% assign m = post.date | date: "%-m" %}
+                {% assign month = post.date | date: "%-m" %}
                 {{ post.date | date: "%-d DE" }}
-                {% case m %}
-                  {% when '1' %}ENERO
-                  {% when '2' %}FEBRERO
-                  {% when '3' %}MARZO
-                  {% when '4' %}ABRIL
-                  {% when '5' %}MAYO
-                  {% when '6' %}JUNIO
-                  {% when '7' %}JULIO
-                  {% when '8' %}AGOSTO
-                  {% when '9' %}SEPTIEMBRE
-                  {% when '10' %}OCTOBRE
-                  {% when '11' %}NOVIEMBRE
-                  {% when '12' %}DICIEMBRE
-                {% endcase %}
+                {% assign index = "mes" | append: month %}
+                {{ site.data.months[index] | upcase }}
                 {{ post.date | date: "%Y" }}
               </div>
 
