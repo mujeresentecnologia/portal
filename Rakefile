@@ -58,7 +58,16 @@ task :test do
   Rake::Task["spec"].invoke
 end
 
+desc 'ejecuta todas las pruebas para ambiente staging y para ambiente prod'
+task :test_all do
+  run_all_tests
+end
+
 # Helper
+
+def run_all_tests
+  sh "ENTORNO=staging-env rake test && ENTORNO=prod rake test"
+end
 
 def jekyll(directives = '')
   sh "bundle exec jekyll #{directives}"
