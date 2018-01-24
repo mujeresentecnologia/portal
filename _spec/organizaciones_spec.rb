@@ -33,16 +33,6 @@ describe 'Organizations' do
           expect(element_alt.size).to eq(1)
         end
       end
-
-      it "I should see the logos in the right position, defined in the file" do
-        organizaciones.each do |org|
-          attributes = org[1]
-          element_src = home.css('.met_logos').xpath(%Q{//img[@src="assets/images/#{attributes['logo']}"]})
-          element_class = element_src[0].parent.attr('class')
-
-          expect(element_class).to eq(grid_styles["#{attributes['position']}"][0]['style'])
-        end
-      end
     end
 
     context "When I am in About Page" do
