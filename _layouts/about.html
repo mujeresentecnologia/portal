@@ -42,10 +42,10 @@
         {% assign attributes = org[1] %}
         {% if attributes["content"] %}
           <div class="row flex">
-            <div class="col-xs-3 col-md-3 col-xs-offset-1 col-md-offset-2 logo">
+            <div class="col-xs-3 col-md-3 col-md-offset-1 logo">
               <img  src="assets/images/{{ attributes['logo'] }}" alt="{{ attributes['name'] }}" />
             </div>
-            <div class="col-xs-7 col-md-7">
+            <div class="col-xs-8 col-md-8">
               <h3>{{ attributes["name"] | upcase }}</h3>
               <p>
                 {{ attributes["content"] }}
