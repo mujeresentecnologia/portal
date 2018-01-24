@@ -1,31 +1,5 @@
 # Informaciones de las organizaciones
 # el dato 'position' debe indicar la posicion que el logo debe estar en el grid 2x2 para pantallas pequeñas
-
-laboratoria:
-  name: Laboratoria
-  content: "Presente en Chile, Perú, México y Brasil, forma mujeres como desarrolladoras web y las inserta en el mercado
-  laboral luego de 6 meses de formación, brindando capacitación en cursos específicos 1 año y medio más, mientras trabajan. 
-  Más de 600 mujeres se han graduado desde 2015 y el 75% han sido contratadas en el sector TECH como desarrolladoras, 
-  triplicando sus ingresos. Laboratoria está convirtiendose rápidamente en la principal fuente de talento femenino digital de LATAM."
-  logo: logo-laboratoria.png
-  url: http://www.laboratoria.la
-
-women_in_management:
-  name: Women in Management
-  content: "El objetivo de WIM es aumentar la productividad en las organizaciones, proporcionando una plataforma para que las 
-  mujeres desarrollen su potencial y alcancen posiciones de toma de decisiones, a través del fortalecimiento de redes de apoyo, 
-  fomento de habilidades de liderazgo y visibilidad de roles."
-  logo: logo-wim.png
-  url: https://www.facebook.com/WIMChile/
-  
-girls_in_tech:
-  name: Girls in Tech
-  content: "Somos una ONG que existe con el fin de promover la participación femenina en la creación de ciencia y tecnología. 
-  Trabajamos con mujeres y niñas por medio de talleres y capacitaciones y estamos presentes en las regiones de Valparaíso, Metropolitana, 
-  Bio Bio y los Lagos."
-  logo: logo-git.png
-  url: http://www.girlsintechchile.com/
-
 duoc:
   name: DUOC
   content: "Ser los principales agentes de creación de capital humano en el área TI en Chile para la sociedad global, reconocidos
@@ -34,9 +8,13 @@ duoc:
   logo: logo-duoc.png
   url: https://www.facebook.com/EscuelaITDuocUC
 
-universidad_de_chile:
-  name: Universidad de Chile
-  logo: logo-uchile.png
+girls_in_tech:
+  name: Girls in Tech
+  content: "Somos una ONG que existe con el fin de promover la participación femenina en la creación de ciencia y tecnología. 
+  Trabajamos con mujeres y niñas por medio de talleres y capacitaciones y estamos presentes en las regiones de Valparaíso, Metropolitana, 
+  Bio Bio y los Lagos."
+  logo: logo-git.png
+  url: http://www.girlsintechchile.com/
 
 inacap:
   name: Inacap
@@ -50,6 +28,15 @@ kodea:
   logo: logo-kodea.png
   url: http://www.kodea.org
 
+laboratoria:
+  name: Laboratoria
+  content: "Presente en Chile, Perú, México y Brasil, forma mujeres como desarrolladoras web y las inserta en el mercado
+  laboral luego de 6 meses de formación, brindando capacitación en cursos específicos 1 año y medio más, mientras trabajan. 
+  Más de 600 mujeres se han graduado desde 2015 y el 75% han sido contratadas en el sector TECH como desarrolladoras, 
+  triplicando sus ingresos. Laboratoria está convirtiendose rápidamente en la principal fuente de talento femenino digital de LATAM."
+  logo: logo-laboratoria.png
+  url: http://www.laboratoria.la
+
 thoughtworks:
   name: ThoughtWorks
   content: "Somos una compañía de software y una comunidad de personas apasionadas, movida por objetivos.
@@ -57,3 +44,15 @@ thoughtworks:
   a la vez que buscamos revolucionar la industria de TI y crear un cambio social positivo."
   logo: logo-tw.png
   url: https://www.thoughtworks.com/es/
+
+universidad_de_chile:
+  name: Universidad de Chile
+  logo: logo-uchile.png
+
+women_in_management:
+  name: Women in Management
+  content: "El objetivo de WIM es aumentar la productividad en las organizaciones, proporcionando una plataforma para que las 
+  mujeres desarrollen su potencial y alcancen posiciones de toma de decisiones, a través del fortalecimiento de redes de apoyo, 
+  fomento de habilidades de liderazgo y visibilidad de roles."
+  logo: logo-wim.png
+  url: https://www.facebook.com/WIMChile/
