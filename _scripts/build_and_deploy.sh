@@ -38,7 +38,7 @@ function build_and_test {
 }
 
 function deploy {
-  echo "deploying changes"
+  echo "deploying change"
 
   if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
      echo "Finished! (we dont deploy pull requests anywhere, if you need to deploy on staging or prod you should merge this code into develop or master, respectively)"
