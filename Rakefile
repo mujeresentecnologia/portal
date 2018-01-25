@@ -35,7 +35,7 @@ end
 
 # Pruebas
 desc 'ejecuta pruebas con html-proofer'
-task :test_html do
+task :test_htmlproofer do
   options = { :assume_extension => true, :check_html => true, :enforce_https => false }
   HTMLProofer.check_directory("./_site", options).run
 end
@@ -57,12 +57,12 @@ task :build_page do
 end
 
 desc 'Execute html tests'
-task :test_html do
-  Rake::Task["test_html"].invoke
+task :test_html => [:build_page] do
+  Rake::Task["test_htmlproofer"].invoke
 end
 
 desc 'Execute spec tests'
-task :test_spec do
+task :test => [:test_html] do
   Rake::Task["spec"].invoke
 end
 
