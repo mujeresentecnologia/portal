@@ -6,9 +6,7 @@ function main {
   setup_env
   clean
   fetch_current_site
-  build
-  test_html
-  test_spec
+  build_and_test
   deploy
 }
 
@@ -34,19 +32,9 @@ function fetch_current_site {
   cd ..
 }
 
-function build {
-  echo "building"
-  bundle exec rake build_page ENTORNO=$ENV_PATH
-}
-
-function test_html {
-  echo "testing html"
-  bundle exec rake test_html ENTORNO=$ENV_PATH
-}
-
-function test_spec {
-  echo "testing spec"
-  bundle exec rake test_spec ENTORNO=$ENV_PATH
+function build_and_test {
+  echo "building and testing"
+  bundle exec rake test ENTORNO=$ENV_PATH
 }
 
 function deploy {
