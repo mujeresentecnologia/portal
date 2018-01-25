@@ -103,7 +103,7 @@ describe "Drafts", :type => :feature do
           expected_status_code = 200
           expected_target_value = "_blank"
 
-          tags = post_page.css(".met_post").css("a")
+          tags = post_page.css(".met_post_publisher").css("a")
           last_tag = tags.last
 
           target_from_logo = last_tag.attributes["target"].text
