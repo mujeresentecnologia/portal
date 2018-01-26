@@ -1,4 +1,4 @@
 ---
 title: Publicaciones e Iniciativas
-layout: publicaciones
+layout: published
 ---

@@ -21,7 +21,7 @@ describe 'All posts' do
   
   context 'Drafts' do
     let(:drafts_files) { load_all_drafts }
-    let(:posts_page) { load_page('publicaciones')}
+    let(:posts_page) { load_page('published')}
     let(:organizaciones) { load_data('organizaciones') }
 
     it 'all drafts should be published by one existing organization' do

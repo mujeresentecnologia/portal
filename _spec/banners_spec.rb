@@ -39,4 +39,13 @@ describe 'Contenidos de Banners' do
       expect(texto_banner).to match(expected_value)
     end
   end
+
+  context 'when I see published page' do
+    let(:published) { load_page("published") }
+    it 'should exists a banner section' do
+      section = published.css('.met_banner_published')
+      
+      expect(section).not_to be_empty
+    end
+  end
 end
