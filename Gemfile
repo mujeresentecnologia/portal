@@ -8,11 +8,8 @@ source "https://rubygems.org" do
 	  gem 'html-proofer'
 	  gem 'rspec'
 		gem 'byebug'
-		gem 'capybara'
-		gem 'rack'
-		gem 'rack-jekyll'
 	end
-
+	
 	group :jekyll_plugins do
 	  gem 'jekyll-feed', '~> 0.6'
 	  gem 'jekyll-sitemap', '~> 1.1', '>= 1.1.1'
