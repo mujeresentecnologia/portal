@@ -7,22 +7,11 @@ describe 'All posts' do
     let(:drafts_files) { load_all_drafts }
     let(:posts_files) { load_all_posts }
 
-    it 'all drafts should be published by one existing organization' do
-      expect(drafts_files).to all(
-        satisfy do |draft|
-          post_title = File.basename(draft, ".md")
-          post_data = load_markdown("_drafts/#{post_title}")
-
-          expect(post_data["organization_id"]).to be
-          expect(organizaciones[post_data["organization_id"]]).to be
-        end)
-    end
-
     it 'all posts should be published by one existing organization' do
       expect(posts_files).to all(
         satisfy do |post|
           post_title = File.basename(post, ".md")
-          post_data = load_markdown("_drafts/#{post_title}")
+          post_data = load_markdown("_posts/#{post_title}")
 
           expect(post_data["organization_id"]).to be
           expect(organizaciones[post_data["organization_id"]]).to be
@@ -34,6 +23,17 @@ describe 'All posts' do
     let(:drafts_files) { load_all_drafts }
     let(:posts_page) { load_page('publicaciones')}
     let(:organizaciones) { load_data('organizaciones') }
+
+    it 'all drafts should be published by one existing organization' do
+      expect(drafts_files).to all(
+        satisfy do |draft|
+          post_title = File.basename(draft, ".md")
+          post_data = load_markdown("_drafts/#{post_title}")
+
+          expect(post_data["organization_id"]).to be
+          expect(organizaciones[post_data["organization_id"]]).to be
+        end)
+    end
 
     it 'page for all publications should show drafts for staging environment' do
       if ENV['ENTORNO'] == "staging-env"; then

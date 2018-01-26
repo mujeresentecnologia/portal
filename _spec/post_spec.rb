@@ -140,9 +140,10 @@ describe "Posts" do
 
         post_title = File.basename(file, ".md")
         post_data = load_markdown("_posts/#{post_title}")
-        post_page = load_page(post_title)
+        html_filename = post_title.slice(11, post_title.size)
+        post_page = load_page(html_filename)
 
-        expect(post_page.xpath('//h1').text).to eq(post_data["title"])
+        expect(post_page.xpath('//h1').text).to eq(post_data["title"].upcase)
       end)
     end
   end
