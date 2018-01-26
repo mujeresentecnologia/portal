@@ -1,6 +1,4 @@
 require 'rspec'
-require 'capybara_helper'
-require 'yaml'
 
 describe "Drafts", :type => :feature do
   let(:drafts_files) { load_all_drafts }
@@ -23,21 +21,22 @@ describe "Drafts", :type => :feature do
     if ENV['ENTORNO'] != "staging-env"; then
 		  expect(drafts_files).to all(
 			  satisfy do |file|
-
-		    post_title = File.basename(file, ".md")
-	      expect(File).not_to exist("_site/#{post_title}.html")
+          
+          post_title = File.basename(file, ".md")
+          expect(File).not_to exist("_site/#{post_title}.html")
 	    end)
     end
   end
 
   it "url of drafts should be like file name" do
-    if ENV['ENTORNO'] != "staging-env"; then
+    if ENV['ENTORNO'] == "staging-env"; then
 		  expect(drafts_files).to all(
 			  satisfy do |file|
         
         file_name = File.basename(file, ".md")
-        visit "/" + file_name + ".html"
-        expect(page.status_code).to eq(200)
+        html_file = "_site/#{file_name}.html"
+
+        expect(File).to exist(html_file)
       end)
     end
   end
@@ -80,10 +79,7 @@ describe "Drafts", :type => :feature do
 
           tags.each{ |tag|
             target_from_post = tag.attributes["target"].text
-            href_from_post = tag.attributes["href"].text
-            visit href_from_post
             expect(target_from_post).to match(expected_target_value)
-            expect(page.status_code).to eq(expected_status_code)
           }
         end)
     end
@@ -108,10 +104,8 @@ describe "Drafts", :type => :feature do
 
           target_from_logo = last_tag.attributes["target"].text
           href_from_logo = last_tag.attributes["href"].text
-          visit href_from_logo
           expect(href_from_logo).to match(expected_url)
           expect(target_from_logo).to match(expected_target_value)
-          expect(page.status_code).to eq(expected_status_code)
         end)
     end
   end
