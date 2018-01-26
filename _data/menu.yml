@@ -1,6 +1,6 @@
 - link: about.html
   nombre: QUIÉNES SOMOS
   color: blue
-- link: publicaciones.html
+- link: published.html
   nombre: PUBLICACIONES
   color: pink

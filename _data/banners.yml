@@ -4,5 +4,9 @@ home:
 
 about:
   - img: banner_about.png
-    text: 
+    text:
+
+published:
+  - img: banner_about.png
+    text:
 
