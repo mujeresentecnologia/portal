@@ -30,7 +30,7 @@
                 <a href="{{ post.url | remove: '/' }}">{{ post.title | upcase }}</a>
               </div>
               <div class="met_post_excerpt">
-                <p>{{ post.content | remove: '<p>' | remove: '</p>' | truncatewords:30 }} <a href="{{ post.url | remove: '/' }}">Ver más</a></p>
+                <p>{{ post.excerpt | strip_html | remove: '<p>' | remove: '</p>' | truncatewords:30 }} <a href="{{ post.url | remove: '/' }}">Ver más</a></p>
               </div>
               <div class="met_post_author">
                 <p>Publicado por
