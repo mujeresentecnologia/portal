@@ -24,6 +24,11 @@
   max-width: 100%;
 }
 
+.met_post_img {
+  max-width: 100%;
+  margin-bottom: 2em;
+}
+
 h1 {
   font-weight: 400;
   text-align: center;
