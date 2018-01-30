@@ -1,7 +1,6 @@
 require 'rspec'
 
 describe 'All posts' do
-
   context 'Published by' do
     let(:organizaciones) { load_data('organizaciones') }
     let(:drafts_files) { load_all_drafts }
