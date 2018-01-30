@@ -7,9 +7,9 @@ source "https://rubygems.org" do
 	group :test do
 	  gem 'html-proofer'
 	  gem 'rspec'
-		gem 'byebug'
+	  gem 'byebug'
 	end
-	
+
 	group :jekyll_plugins do
 	  gem 'jekyll-feed', '~> 0.6'
 	  gem 'jekyll-sitemap', '~> 1.1', '>= 1.1.1'
