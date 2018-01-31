@@ -143,7 +143,7 @@ describe "Posts" do
         html_filename = post_title.slice(11, post_title.size)
         post_page = load_page(html_filename)
 
-        expect(post_page.xpath('//h1').text).to eq(post_data["title"].upcase)
+        expect(post_page.css('h1').text).to eq(post_data["title"].upcase)
       end)
     end
   end

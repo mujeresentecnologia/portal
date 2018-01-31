@@ -26,6 +26,7 @@
 
 .met_post_img {
   max-width: 100%;
+  min-width: 100%;
   margin-bottom: 2em;
 }
 
