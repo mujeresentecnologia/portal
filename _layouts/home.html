@@ -9,6 +9,7 @@
 <body>
   {% include navbar.html %}
   {% include banner.html %}
+  {% if site.data.toggles["home"]["last_three_posts"]  %}
   <section class="met_light">
     {% for post in site.posts limit: 3 %}
       <h1>
@@ -16,6 +17,7 @@
       </h1>
     {% endfor %}
   </section>
+  {% endif %}
   <section>
       <div class="container">
           <div>
