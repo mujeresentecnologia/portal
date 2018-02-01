@@ -2,7 +2,7 @@
 layout: post
 title: Se acerca el Talent Fest de Laboratoria, la Hakathon de Mujeres más grande de Chile
 organization_id: laboratoria
-date: 2018-01-30
+date: 2018-02-01
 permalink: /:title
 image: https://scontent-scl1-1.xx.fbcdn.net/v/t1.0-9/27067778_890358544471887_8721899937753379899_n.png?oh=9a7535ac828b76567fb52d43aa9f318d&oe=5B26632E
 ---
