@@ -22,6 +22,46 @@ h1 span {
   max-height: 10em;
 }
 
+.met_column {
+  padding: 0 3em 0 3em;
+}
+
+.met_column h4 a {
+  font-weight: 700;
+  font-size: 1.2em;
+  color: var(--title-color-dark);
+  font-family: 'Oswald', sans-serif ;
+}
+
+.met_column a {
+  font-weight: 700;
+	color: var(--third-color-background);
+}
+
+.met_post_date {
+  font-style: italic;
+}
+
+.met_centered {
+  text-align: center;
+}
+
+.met_button {
+  margin: 3em 0 3em 0;
+  padding: 1em 3em 1em 3em;
+  border: none;
+  border-radius: 0;
+  color: var(--title-color-light);
+  background-color: var(--third-color-background);
+  font-size: 1.2em;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+}
+
+.met_bold {
+  font-weight: bold;
+}
+
 @media only screen and (max-device-width: 766px) {
   .met_logos img {
     max-height: 2em;

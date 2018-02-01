@@ -1,13 +1,16 @@
-.met_post {
-  padding: 10em 0 4em 0;
+.met_post_head {
+  padding: 10em 0 1em 0;
   font-family: 'Gudea', sans-serif;
   text-align: center;
-  font-size: 1.2em;
 }
 
-.met_post p {
-  text-align: justify;
+.met_post_content {
+  font-size: 1.2em;
   padding-bottom: 0.5em;
+}
+
+.met_post_content p {
+  text-align: justify;
 }
 
 .met_post_date {
@@ -28,6 +31,17 @@
   max-width: 100%;
   min-width: 100%;
   margin-bottom: 2em;
+}
+
+.met_post_image_default {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.met_post_image_default img {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%; 
 }
 
 h1 {
