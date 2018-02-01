@@ -23,12 +23,12 @@
           {% for post in site.posts limit: 3 %}
             <div class="col-xs-4 col-md-4 met_column">
               <p>
-                EN {{ site.data.organizaciones[post.organization_id].name }}
+                EN <strong>{{ site.data.organizaciones[post.organization_id].name }} </strong>
               </p>
               <h4>
                 {{ post.title }}
               </h4>
-              <p> 
+              <p class="met_post_date"> 
                 {% assign month = post.date | date: "%-m" %}
                 {{ post.date | date: "%d" }}
                 {% assign index = "mes" | append: month %}
@@ -37,7 +37,7 @@
 
               </p>
               <p>
-                {{ post.excerpt | strip_html | remove: '<p>' | remove: '</p>' | truncatewords: 15 }} 
+                {{ post.excerpt | strip_html | remove: '<p>' | remove: '</p>' | truncatewords: 30 }} 
                 <a href="{{ post.url | remove: '/' }}">Ver más</a>
               </p>
             </div>
