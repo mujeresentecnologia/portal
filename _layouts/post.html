@@ -13,7 +13,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-md-12">
-          <div class="met_post">
+          <div class="met_post_head">
             {% assign month = page.date | date: "%-m" %} {% assign index = "mes" | append: month %}
             <div class="met_post_date">
               {{ page.date | date: "%-d DE" }} {{ site.data.months[index] | upcase }} {{ page.date | date: "%Y" }}
@@ -21,8 +21,15 @@
             <div>
               <h1>{{ page.title | upcase }}</h1>
             </div>
-            {{ content }}
           </div>
+        </div>
+        {% if page.image %}
+        <div class="col-xs-8 col-md-8 col-xs-offset-2 col-md-offset-2 met_post_image_default">
+          <img src="{{ page.image }}" alt="{{ page.title | upcase }}" >
+        </div>
+        {% endif %}
+        <div class="col-xs-12 col-md-12 met_post_content">
+          {{ content }}
         </div>
         <div class="col-xs-4 col-md-4 col-xs-offset-4 col-md-offset-4 met_post_publisher">
           {% assign org = site.data.organizaciones %} PUBLICADO POR
