@@ -18,13 +18,28 @@ describe 'All posts' do
         end)
     end
 
-    it 'If there is more than 6 publications, I can see only 6 posts' do
-        MAX_POSTS = 6
-        posts_content = publication_page.css('.met_content li')
+    it 'If there is more than 6 publications, I can see only 6 posts and a button' do
+      max_posts = 6
+      not_empty = 1
+      posts_content = publication_page.css('.met_content li')
+      show_more_button = publication_page.css('.met_button')
 
-        if posts_content.size >= 6 then
-          expect(posts_content.size).to eq(MAX_POSTS)
-        end
+      if posts_content.size >= 6 then
+        expect(posts_content.size).to eq(max_posts)
+        expect(show_more_button.size).to eq(not_empty)
+      end
+    end
+
+    it 'Less than 6 publications, I can see only 6 posts and a button' do
+      max_posts = 6
+      not_empty = 1
+      posts_content = publication_page.css('.met_content li')
+      show_more_button = publication_page.css('.met_button')
+
+      if posts_content.size >= 6 then
+        expect(posts_content.size).to eq(max_posts)
+        expect(show_more_button.size).to eq(not_empty)
+      end
     end
   end
   
