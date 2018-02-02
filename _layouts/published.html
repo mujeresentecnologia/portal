@@ -39,15 +39,17 @@
         {% endfor %}
       </ul>
     </div>
-    {% assign max_posts = 6 %} 
-    {% if site.posts.size > max_posts %} 
-    <div class="row text-center">
-      <div>
-        <a class="btn met_button">
-          VER MÁS PUBLICACIONES
-        </a>
-      </div>
-  </div>
+    {% if site.data.toggles["published"]["show_more_posts"] %}
+      {% assign max_posts = 6 %} 
+      {% if site.posts.size > max_posts %} 
+      <div class="row text-center">
+        <div>
+          <a class="btn met_button">
+            MOSTRAR MÁS PUBLICACIONES
+          </a>
+        </div>
+    </div>
+    {% endif %}
   {% endif %}
   </div>
   {% include footer.html %}
