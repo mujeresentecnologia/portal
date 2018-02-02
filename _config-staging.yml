@@ -1,3 +1,4 @@
 baseurl: "/staging-env"
 google_analytics: UA-111563968-2
 environment: dev
+hotjar_id: 768097

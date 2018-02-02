@@ -30,3 +30,4 @@ exclude:
 baseurl: "/home"
 google_analytics: UA-111563968-1
 environment: prod
+hotjar_id: 767992
