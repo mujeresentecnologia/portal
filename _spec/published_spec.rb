@@ -5,6 +5,7 @@ describe 'All posts' do
     let(:organizaciones) { load_data('organizaciones') }
     let(:drafts_files) { load_all_drafts }
     let(:posts_files) { load_all_posts }
+    let(:publication_page) { load_page("published") }
 
     it 'all posts should be published by one existing organization' do
       expect(posts_files).to all(
@@ -15,6 +16,15 @@ describe 'All posts' do
           expect(post_data["organization_id"]).to be
           expect(organizaciones[post_data["organization_id"]]).to be
         end)
+    end
+
+    it 'If there is more than 6 publications, I can see only 6 posts' do
+        MAX_POSTS = 6
+        posts_content = publication_page.css('.met_content li')
+
+        if posts_content.size >= 6 then
+          expect(posts_content.size).to eq(MAX_POSTS)
+        end
     end
   end
   
