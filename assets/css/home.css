@@ -42,22 +42,6 @@ h1 span {
   font-style: italic;
 }
 
-.met_centered {
-  text-align: center;
-}
-
-.met_button {
-  margin: 3em 0 3em 0;
-  padding: 1em 3em 1em 3em;
-  border: none;
-  border-radius: 0;
-  color: var(--title-color-light);
-  background-color: var(--third-color-background);
-  font-size: 1.2em;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-}
-
 .met_bold {
   font-weight: bold;
 }

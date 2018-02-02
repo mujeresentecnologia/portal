@@ -24,21 +24,22 @@ describe 'All posts' do
       posts_content = publication_page.css('.met_content li')
       show_more_button = publication_page.css('.met_button')
 
-      if posts_content.size >= 6 then
+      if posts_content.size > max_posts then
         expect(posts_content.size).to eq(max_posts)
         expect(show_more_button.size).to eq(not_empty)
       end
     end
 
-    it 'Less than 6 publications, I can see only 6 posts and a button' do
+    it 'Less than 6 publications, I can see them and button disappears' do
       max_posts = 6
-      not_empty = 1
+      empty = 0
       posts_content = publication_page.css('.met_content li')
       show_more_button = publication_page.css('.met_button')
 
-      if posts_content.size >= 6 then
-        expect(posts_content.size).to eq(max_posts)
-        expect(show_more_button.size).to eq(not_empty)
+      if posts_content.size < max_posts then
+        expected_size = posts_content.size % max_posts
+        expect(posts_content.size).to eq(expected_size)
+        expect(show_more_button.size).to eq(empty)
       end
     end
   end

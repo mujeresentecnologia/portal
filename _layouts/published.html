@@ -3,50 +3,52 @@
 
 <head>
   {% include head.html %}
-  <link rel="stylesheet" href="assets/css/publicaciones.css">
+  <link rel="stylesheet" href="assets/css/publications.css">
 </head>
 
 <body>
-  {% include navbar.html %}
-  {% include banner.html %}
+  {% include navbar.html %} {% include banner.html %}
   <div class="container">
+    <div class="met_content">
       <div>
-        <div class="met_content">
-          <div>
-            <h1>{{ page.title | upcase }}</h1>
-          </div>
-          <ul>
-            {% for post in site.posts %}
-            <li id="{{ post.title }}">
-              <div class="met_post_date">
-                {% assign month = post.date | date: "%-m" %}
-                {{ post.date | date: "%-d DE" }}
-                {% assign index = "mes" | append: month %}
-                {{ site.data.months[index] | upcase }}
-                {{ post.date | date: "%Y" }}
-              </div>
-
-              <div class="met_post_title">
-                <a href="{{ post.url | remove: '/' }}">{{ post.title | upcase }}</a>
-              </div>
-              <div class="met_post_excerpt">
-                <p>{{ post.excerpt | strip_html | remove: '<p>' | remove: '</p>' | truncatewords:30 }} <a href="{{ post.url | remove: '/' }}">Ver más</a></p>
-              </div>
-              <div class="met_post_author">
-                <p>Publicado por
-                  <a href="{{ site.data.organizaciones[post.organization_id].url }}" target="_blank">{{ site.data.organizaciones[post.organization_id].name }}</a>
-                </p>
-              </div>
-            </li>
-            {% endfor %}
-          </ul>
-          <div class="row text-centered">
-            <div class="met_button">
-
-            </div>
-          </div>
-        </div>
+        <h1>{{ page.title | upcase }}</h1>
       </div>
+      <ul>
+        {% for post in site.posts %}
+        <li id="{{ post.title }}">
+          <div class="met_post_date">
+            {% assign month = post.date | date: "%-m" %} {{ post.date | date: "%-d DE" }} {% assign index = "mes" | append: month %}
+            {{ site.data.months[index] | upcase }} {{ post.date | date: "%Y" }}
+          </div>
+
+          <div class="met_post_title">
+            <a href="{{ post.url | remove: '/' }}">{{ post.title | upcase }}</a>
+          </div>
+          <div class="met_post_excerpt">
+            <p>{{ post.excerpt | strip_html | remove: '
+              <p>' | remove: '</p>' | truncatewords:30 }}
+              <a href="{{ post.url | remove: '/' }}">Ver más</a>
+            </p>
+          </div>
+          <div class="met_post_author">
+            <p>Publicado por
+              <a href="{{ site.data.organizaciones[post.organization_id].url }}" target="_blank">{{ site.data.organizaciones[post.organization_id].name }}</a>
+            </p>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% assign max_posts = 6 %} 
+    {% if site.posts.size > max_posts %} 
+    <div class="row text-center">
+      <div>
+        <a class="btn met_button">
+          VER MÁS PUBLICACIONES
+        </a>
+      </div>
+  </div>
+  {% endif %}
   </div>
   {% include footer.html %}
 </body>
