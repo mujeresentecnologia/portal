@@ -13,44 +13,52 @@
       <div>
         <h1>{{ page.title | upcase }}</h1>
       </div>
+      {% assign max_posts = 6 %} 
       <ul>
         {% for post in site.posts %}
-        <li id="{{ post.title }}">
-          <div class="met_post_date">
-            {% assign month = post.date | date: "%-m" %} {{ post.date | date: "%-d DE" }} {% assign index = "mes" | append: month %}
-            {{ site.data.months[index] | upcase }} {{ post.date | date: "%Y" }}
-          </div>
+        {% if site.data.toggles["published"]["show_more_posts"] %}
+          {% if forloop.index <= max_posts %}
+            <li id="{{ post.title }}">
+          {% else %}
+            <li id="{{ post.title }}" hidden>
+          {% endif %}  
+        {% else %}
+          <li id="{{ post.title }}">
+        {% endif %}
+            <div class="met_post_date">
+              {% assign month = post.date | date: "%-m" %} {{ post.date | date: "%-d DE" }} {% assign index = "mes" | append: month %}
+              {{ site.data.months[index] | upcase }} {{ post.date | date: "%Y" }}
+            </div>
 
-          <div class="met_post_title">
-            <a href="{{ post.url | remove: '/' }}">{{ post.title | upcase }}</a>
-          </div>
-          <div class="met_post_excerpt">
-            <p>{{ post.excerpt | strip_html | remove: '
-              <p>' | remove: '</p>' | truncatewords:30 }}
-              <a href="{{ post.url | remove: '/' }}">Ver más</a>
-            </p>
-          </div>
-          <div class="met_post_author">
-            <p>Publicado por
-              <a href="{{ site.data.organizaciones[post.organization_id].url }}" target="_blank">{{ site.data.organizaciones[post.organization_id].name }}</a>
-            </p>
-          </div>
-        </li>
+            <div class="met_post_title">
+              <a href="{{ post.url | remove: '/' }}">{{ post.title | upcase }}</a>
+            </div>
+            <div class="met_post_excerpt">
+              <p>{{ post.excerpt | strip_html | remove: '
+                <p>' | remove: '</p>' | truncatewords:30 }}
+                <a href="{{ post.url | remove: '/' }}">Ver más</a>
+              </p>
+            </div>
+            <div class="met_post_author">
+              <p>Publicado por
+                <a href="{{ site.data.organizaciones[post.organization_id].url }}" target="_blank">{{ site.data.organizaciones[post.organization_id].name }}</a>
+              </p>
+            </div>
+          </li>
         {% endfor %}
       </ul>
     </div>
     {% if site.data.toggles["published"]["show_more_posts"] %}
-      {% assign max_posts = 6 %} 
       {% if site.posts.size > max_posts %} 
-      <div class="row text-center">
-        <div>
-          <a class="btn met_button">
-            MOSTRAR MÁS PUBLICACIONES
-          </a>
+        <div class="row text-center">
+          <div>
+            <a class="btn met_button">
+              MOSTRAR MÁS PUBLICACIONES
+            </a>
+          </div>
         </div>
-    </div>
+      {% endif %}
     {% endif %}
-  {% endif %}
   </div>
   {% include footer.html %}
 </body>
