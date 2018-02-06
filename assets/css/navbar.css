@@ -6,6 +6,10 @@
   color: var(--links-color);  
 }
 
+#navbarText a:hover {
+  color: #333;  
+}
+
 #navbarWarning {
   background-color: var(--warning-color-background);
   text-align: center;
