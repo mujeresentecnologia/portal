@@ -17,15 +17,11 @@
       {% assign max_posts = 6 %} 
       <ul>
         {% for post in site.posts %}
-        {% if site.data.toggles["published"]["show_more_posts"] %}
           {% if forloop.index <= max_posts %}
             <li id="{{ post.title }}">
           {% else %}
             <li class="met_hidden" id="{{ post.title }}">
           {% endif %}  
-        {% else %}
-          <li id="{{ post.title }}">
-        {% endif %}
             <div class="met_post_date">
               {% assign month = post.date | date: "%-m" %} {{ post.date | date: "%-d DE" }} {% assign index = "mes" | append: month %}
               {{ site.data.months[index] | upcase }} {{ post.date | date: "%Y" }}
@@ -48,16 +44,14 @@
           </li>
         {% endfor %}
       </ul>
-      {% if site.data.toggles["published"]["show_more_posts"] %}
-        {% if site.posts.size > max_posts %} 
-          <div id="met_show_posts" class="row text-center">
-            <div>
-              <a class="btn met_button" onclick="showMoreContent({{ max_posts }});">
-                MOSTRAR MÁS PUBLICACIONES
-              </a>
-            </div>
+      {% if site.posts.size > max_posts %} 
+        <div id="met_show_posts" class="row text-center">
+          <div>
+            <a class="btn met_button" onclick="showMoreContent({{ max_posts }});">
+              MOSTRAR MÁS PUBLICACIONES
+            </a>
           </div>
-        {% endif %}
+        </div>
       {% endif %}
     </div>
   </div>
