@@ -4,12 +4,13 @@
 <head>
   {% include head.html %}
   <link rel="stylesheet" href="assets/css/publications.css">
+  <script src="assets/js/published_content.js"></script>
 </head>
 
 <body>
   {% include navbar.html %} {% include banner.html %}
   <div class="container">
-    <div class="met_content">
+    <div id="met_published_posts" class="met_content">
       <div>
         <h1>{{ page.title | upcase }}</h1>
       </div>
@@ -20,7 +21,7 @@
           {% if forloop.index <= max_posts %}
             <li id="{{ post.title }}">
           {% else %}
-            <li id="{{ post.title }}" hidden>
+            <li class="met_hidden" id="{{ post.title }}">
           {% endif %}  
         {% else %}
           <li id="{{ post.title }}">
@@ -47,18 +48,18 @@
           </li>
         {% endfor %}
       </ul>
-    </div>
-    {% if site.data.toggles["published"]["show_more_posts"] %}
-      {% if site.posts.size > max_posts %} 
-        <div class="row text-center">
-          <div>
-            <a class="btn met_button">
-              MOSTRAR MÁS PUBLICACIONES
-            </a>
+      {% if site.data.toggles["published"]["show_more_posts"] %}
+        {% if site.posts.size > max_posts %} 
+          <div id="met_show_posts" class="row text-center">
+            <div>
+              <a class="btn met_button" onclick="showMoreContent({{ max_posts }});">
+                MOSTRAR MÁS PUBLICACIONES
+              </a>
+            </div>
           </div>
-        </div>
+        {% endif %}
       {% endif %}
-    {% endif %}
+    </div>
   </div>
   {% include footer.html %}
 </body>

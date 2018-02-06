@@ -36,3 +36,7 @@ ul {
 .met_content li {
   padding: 1em 0;
 }
+
+.met_hidden {
+  display: none;
+}

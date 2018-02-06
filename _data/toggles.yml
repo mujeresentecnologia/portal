@@ -1,4 +1,4 @@
 home:
   last_three_posts: true
 published:
-  show_more_posts: false
+  show_more_posts: true

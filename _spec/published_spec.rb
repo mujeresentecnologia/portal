@@ -23,7 +23,7 @@ describe 'All posts' do
       if toggles["published"]["show_more_posts"] ; then
         max_posts = 6
         not_empty = 1
-        posts_content = publication_page.css('.met_content').xpath(".//li[not (@hidden)]")
+        posts_content = publication_page.css('.met_content met_hidden')
         show_more_button = publication_page.css('.met_button')
 
         if posts_content.size > max_posts ; then
