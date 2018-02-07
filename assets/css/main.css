@@ -73,3 +73,8 @@ h1 {
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
 }
+
+.met_button:hover{
+  color: white;
+  background-color: var(--second-color-background);
+}
