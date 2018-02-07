@@ -19,4 +19,15 @@ describe 'SEO Metadatos' do
       expect(desc_tag[0]['content']).to eql(desc_content)
     end
   end
+
+  context 'when keywords are definded on _config' do
+    let(:doc) { load_home }
+    let(:config) { load_main_config }
+    it 'define a tag <meta keywords> inside <head>' do
+      keywords_content = config.fetch('keywords')
+      keywords_tag = doc.xpath('//html/head/meta[@name="keywords"]')
+
+      expect(keywords_tag[0]['content']).to eql(keywords_content)
+    end
+  end
 end
