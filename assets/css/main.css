@@ -61,3 +61,15 @@ h1 {
   color: var(--text-color);
   font-size: 1.4em;
 }
+
+.met_button {
+  margin: 3em 0 3em 0;
+  padding: 1em 3em 1em 3em;
+  border: none;
+  border-radius: 0;
+  color: var(--title-color-light);
+  background-color: var(--third-color-background);
+  font-size: 1.2em;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+}

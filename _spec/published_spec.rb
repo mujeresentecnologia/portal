@@ -5,6 +5,7 @@ describe 'All posts' do
     let(:organizaciones) { load_data('organizaciones') }
     let(:drafts_files) { load_all_drafts }
     let(:posts_files) { load_all_posts }
+    let(:publication_page) { load_page("published") }
 
     it 'all posts should be published by one existing organization' do
       expect(posts_files).to all(
@@ -15,6 +16,31 @@ describe 'All posts' do
           expect(post_data["organization_id"]).to be
           expect(organizaciones[post_data["organization_id"]]).to be
         end)
+    end
+
+    it 'If there is more than 6 publications, I can see only 6 posts and a button' do
+      max_posts = 6
+      not_empty = 1
+      posts_content = publication_page.css('.met_content met_hidden')
+      show_more_button = publication_page.css('.met_button')
+
+      if posts_content.size > max_posts ; then
+        expect(posts_content.size).to eq(max_posts)
+        expect(show_more_button.size).to eq(not_empty)
+      end
+    end
+
+    it 'Less than 6 publications, I can see them and button disappears' do
+      max_posts = 6
+      empty = 0
+      posts_content = publication_page.css('.met_content').xpath(".//li[not (@hidden)]")
+      show_more_button = publication_page.css('.met_button')
+
+      if posts_content.size < max_posts ; then
+        expected_size = posts_content.size % max_posts
+        expect(posts_content.size).to eq(expected_size)
+        expect(show_more_button.size).to eq(empty)
+      end
     end
   end
   
