@@ -6,8 +6,9 @@
   color: var(--links-color);  
 }
 
-#navbarText a:hover {
-  color: #333;  
+.met_navbar_no_border li:hover {
+  border-bottom: 0.2em solid;
+  border-color: white;
 }
 
 #navbarWarning {
@@ -51,8 +52,12 @@
 
 .met_navbar_color_blue {
   background-color: var(--second-color-background);
+  border-bottom: 0.2em solid;
+  border-color: var(--second-color-background);
 }
 
 .met_navbar_color_pink {
   background-color: var(--third-color-background);
+  border-bottom: 0.2em solid;
+  border-color: var(--third-color-background);
 }
