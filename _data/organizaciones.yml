@@ -18,7 +18,12 @@ girls_in_tech:
 
 inacap:
   name: Inacap
-  logo: logo-inacap.png
+  content: "La Universidad Tecnológica de Chile INACAP es parte del sistema integrado de Educación Superior INACAP, constituido 
+  también por el Instituto Profesional INACAP y el Centro de Formación Técnica INACAP. La Universidad está presente, a través de 
+  sus 26 Sedes, en todas las regiones del país. Su Directorio está integrado por miembros elegidos por la Confederación de la 
+  Producción y del Comercio, la Corporación Nacional Privada de Desarrollo Social y el Servicio de Cooperación Técnica."
+  logo: logo_inacap_2.png
+  url: http://www.inacap.cl
 
 kodea:
   name: Kodea
